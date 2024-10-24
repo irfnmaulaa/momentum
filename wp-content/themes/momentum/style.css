@@ -29,3 +29,13 @@ Version: 1.0.0
     font-weight: 700;
     font-style: normal;
 }
+
+.input-qa:checked ~ label img {
+    transform: rotate(180deg);
+}
+.accordion-content {
+    display: none;
+}
+.input-qa:checked ~ label .accordion-content {
+    display: block;
+}

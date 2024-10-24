@@ -40,40 +40,44 @@
 <main id="content">
 
     <!-- S: Navbar -->
-    <header class="fixed w-full max-w-[1200px] top-[32px] left-[50%] translate-x-[-50%] translate-x- h-[108px] bg-white rounded-[80px] flex items-center justify-between px-[32px] z-[99] shadow-lg">
-        <h1 class="navbar-brand">
-            <a href="#hero">
-                <img src="<?= get_logo() ?>" alt="logo" width="199" height="40" class="logo hidden lg:inline-block">
-                <img src="<?= get_site_icon_url() ?>" alt="logo" width="40" height="40" class="logo-sm w-[40px] aspect-[1/1] inline-block lg:hidden">
-            </a>
-        </h1>
-        <nav class="navbar-nav">
-            <ul class="navbar-menu flex items-center gap-[32px]">
-                <?php foreach(wp_get_nav_menu_items('Header') as $menu) : ?>
-                    <?php if($menu->title === 'Consult With Us'): ?>
-                        <li class="navbar-item">
-                            <a href="<?= $menu->url ?>" target="_blank" class="navbar-link p-4 font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+    <header class="fixed w-full top-[32px] left-0">
+        <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[80px] flex items-center justify-between px-[32px] z-[99] shadow-lg h-[108px] w-full">
+                <h1 class="navbar-brand">
+                    <a href="#hero">
+                        <img src="<?= get_logo() ?>" alt="logo" width="199" height="40" class="logo hidden lg:inline-block">
+                        <img src="<?= get_site_icon_url() ?>" alt="logo" width="40" height="40" class="logo-sm w-[40px] aspect-[1/1] inline-block lg:hidden">
+                    </a>
+                </h1>
+                <nav class="navbar-nav">
+                    <ul class="navbar-menu flex items-center gap-[32px]">
+                        <?php foreach(wp_get_nav_menu_items('Header') as $menu) : ?>
+                            <?php if($menu->title === 'Consult With Us'): ?>
+                                <li class="navbar-item">
+                                    <a href="<?= $menu->url ?>" target="_blank" class="navbar-link p-4 font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
                                 <span class="flex items-center justify-center gap-2 lg:gap-3">
                                     Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
                                 </span>
-                            </a>
-                        </li>
-                    <?php else: ?>
-                        <li class="navbar-item">
-                            <a href="<?= $menu->url ?>" class="navbar-link transition duration-100 font-semibold">
-                                <?= $menu->title ?>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
+                                    </a>
+                                </li>
+                            <?php else: ?>
+                                <li class="navbar-item">
+                                    <a href="<?= $menu->url ?>" class="navbar-link transition duration-100 font-semibold">
+                                        <?= $menu->title ?>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
     <!-- E: Navbar -->
 
     <!-- S: Hero -->
     <section id="hero" class="hero bg-[#D4C2AD] w-full pt-[172px] pb-[32px]">
-        <div class="container max-w-[1200px] mx-auto">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
             <div class="max-w-[800px] mx-auto bg-white px-[40px] py-[24px]">
 
                 <div class="flex justify-between items-center mb-[16px]">
@@ -140,7 +144,7 @@
 
     <!-- S: Partners -->
     <section id="partners" class="partners w-full py-[50px] bg-[#3A3A3A]">
-        <div class="container w-full max-w-[1200px] flex items-center gap-8 mx-auto">
+        <div class="container px-4 sm:px-6 lg:px-8 w-full max-w-[1200px] flex items-center gap-8 mx-auto">
             <?php foreach(range(1, 9) as $i): ?>
                 <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>">
             <?php endforeach; ?>
@@ -150,7 +154,7 @@
 
     <!-- S: About -->
     <section id="about" class="about bg-[#F5DF4D] py-[80px]">
-        <div class="container max-w-[1200px] mx-auto flex flex-col gap-[45px]">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[45px]">
             <div class="grid grid-cols-[1fr,640px] rounded-[16px] overflow-hidden">
                 <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/about-display.png' ?>)] bg-cover bg-center"></div>
                 <div class="p-[48px] flex flex-col gap-[36px] bg-white items-start">
@@ -205,7 +209,7 @@
 
     <!-- S: Service -->
     <section id="service" class="service mt-[68px] py-[80px]">
-        <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Promise To You</h2>
             <div class="grid grid-cols-2 gap-[37px] w-full">
                 <div class="grid grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
@@ -243,7 +247,7 @@
 
     <!-- S: Testimonial -->
     <section id="testimonial" class="testimonial py-[80px]">
-        <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Let’s Hear What Others Say</h2>
             <div class="grid grid-cols-4 gap-[24px]">
                 <div class="p-[24px] bg-white rounded-[16px] flex flex-col gap-[22px]">
@@ -304,7 +308,7 @@
 
     <!-- S: Call to Action -->
     <section id="cta" class="cta py-[80px]">
-        <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <div class="bg-[#F5DF4D] rounded-[24px] grid grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
                 <div class="flex flex-col items-start gap-[37px] py-14">
                     <h2 class="text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
@@ -326,7 +330,7 @@
 
     <!-- S: Digital Service -->
     <section id="digital-service" class="digital-service py-[80px]">
-        <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Digital Services</h2>
             <div class="grid grid-cols-3 gap-[24px] w-full">
                 <div class="bg-white rounded-[8px] flex flex-col overflow-hidden">
@@ -354,7 +358,7 @@
 
     <!-- S: Portfolio -->
     <section id="portfolio" class="portfolio py-[80px]">
-        <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Proud Works</h2>
             <div class="grid grid-cols-3 gap-[24px] w-full">
                 <?php
@@ -385,13 +389,86 @@
     <!-- E: Portfolio -->
 
     <!-- S: QA -->
+    <section id="qa" class="qa py-[80px]">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+            <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Got Questions? Look No Further!</h2>
+            <p class="text-[22px]">It's natural to have some questions. Here are some we generally get.</p>
+            <div class="flex flex-col gap-[21px] w-full">
 
+                <div class="accordion">
+                    <input id="qa-1" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
+                    <label for="qa-1" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                        <span class="flex items-center justify-between w-full">
+                            <p class="text-[20px] font-bold">Apa yang membedakan Momentum dari Agensi Social Media Management lainnya?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                        </span>
+                        <span class="accordion-content pt-4">
+                            Kami bukan advertising atau social media agency yang berfokus membuat konten, mengejar likes atau followers saja. Fokus kami adalah mengubah social media kamu menjadi lead generator machine dan membangun komunitas untuk brand perusahaanmu.
+                        </span>
+                    </label>
+                </div>
+
+                <div class="accordion">
+                    <input id="qa-2" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
+                    <label for="qa-2" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                        <span class="flex items-center justify-between w-full">
+                            <p class="text-[20px] font-bold">Apa saja yang termasuk dalam layanan Social Media Management Momentum?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                        </span>
+                        <span class="accordion-content pt-4">
+                            Semua projek Social Media Management di Momentum dimulai dari Research (internal, target market, kompetitor, dan industri), sebelum akhirnya dilanjutkan dengan menentukan Target Market utamamu. Setelah itu, Momentum akan membuat Brand Campaign dan menentukan channel sebelum melanjutkan ke Media Buying untuk memastikan keefektifan budget digital marketing-mu.
+                        </span>
+                    </label>
+                </div>
+
+                <div class="accordion">
+                    <input id="qa-3" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
+                    <label for="qa-3" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                        <span class="flex items-center justify-between w-full">
+                            <p class="text-[20px] font-bold">Berapa lama projek Social Media Manegement di Momentum berlangsung?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                        </span>
+                        <span class="accordion-content pt-4">
+                            Waktu yang dibutuhkan untuk melihat keberhasilan Social Media Manegement tidak instan, terlebih jika ingin membangun komunitas yang aktif. Momentum menerapkan sistem management selama 6 hingga 12 bulan untuk mendapatkan hasil yang maksimal.
+                        </span>
+                    </label>
+                </div>
+
+                <div class="accordion">
+                    <input id="qa-4" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
+                    <label for="qa-4" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                        <span class="flex items-center justify-between w-full">
+                            <p class="text-[20px] font-bold">Industri apa yang menjadi spesialisasi dari Momentum?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                        </span>
+                        <span class="accordion-content pt-4">
+                            Selama lebih dari 7 tahun berdiri, kami telah berhasil membantu ratusan Perusahaan, yang kebanyakan berada di industri properti, teknologi, banking & finance, healthcare, edukasi, wellness & beauty, retail dan bisnis lainnya.
+                        </span>
+                    </label>
+                </div>
+
+                <div class="accordion">
+                    <input id="qa-5" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
+                    <label for="qa-5" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                        <span class="flex items-center justify-between w-full">
+                            <p class="text-[20px] font-bold">Berapakah estimasi harga yang harus kami keluarkan?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                        </span>
+                        <span class="accordion-content pt-4">
+                            Investment value sangat bergantung pada kompleksitas projek dan goal yang ingin dicapai. Kami menyediakan beberapa paket Social Media Management dan juga projek yang bisa dikustom tergantung dengan kebutuhan bisnismu. Untuk lebih jelasnya silahkan hubungi kami di sini.
+                        </span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <!-- E: QA -->
 
     <!-- S: Call to Action Bottom -->
     <section id="cta-bottom" class="cta-bottom py-[80px] relative">
         <div class="absolute pointer-events-none bg-[#3A3A3A] h-[50%] w-full bottom-0 left-0 z-[0] translate-y-[2px]"></div>
-        <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center relative z-[1]">
+        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center relative z-[1]">
             <div class="bg-[#F5DF4D] rounded-[24px] grid grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
                 <div class="flex flex-col items-start gap-[37px] py-14">
                     <h2 class="text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
@@ -415,7 +492,7 @@
 
 <!-- S: Footer -->
 <footer id="footer" class="footer py-[80px] bg-[#3A3A3A] text-white">
-    <div class="container max-w-[1200px] mx-auto flex flex-col gap-32 items-center">
+    <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-32 items-center">
         <div class="flex flex-col gap-12 w-full">
             <img src="<?= get_stylesheet_directory_uri() . '/img/logo-long-white.png' ?>" alt="logo" width="240" height="45">
             <div class="flex justify-between w-full">
