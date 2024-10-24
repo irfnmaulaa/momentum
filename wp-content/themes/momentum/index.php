@@ -21,14 +21,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Momentum - Official Website">
     <meta property="og:description" content="Official website of momentum indonesia">
-    <meta property="og:image" content="<?= get_template_directory_uri() . '/img/momentum.jpg' ?>">
+    <meta property="og:image" content="<?= get_template_directory_uri() . '/img/momentum.png' ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="<?= site_url() ?>">
     <meta property="twitter:title" content="Momentum - Official Website">
     <meta property="twitter:description" content="Official website of momentum indonesia">
-    <meta property="twitter:image" content="<?= get_template_directory_uri() . '/img/momentum.jpg' ?>">
+    <meta property="twitter:image" content="<?= get_template_directory_uri() . '/img/momentum.png' ?>">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= site_url() ?>">
