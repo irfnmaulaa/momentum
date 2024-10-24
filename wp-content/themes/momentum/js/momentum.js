@@ -2,6 +2,25 @@ const $ = jQuery
 
 $(document).ready(function () {
 
+    $('a').click(function (e) {
+        const target = $(this).attr('href')
+        if(target[0] === '#') {
+            e.preventDefault()
+
+            var offset = 120; // Adjust this value based on your needs
+            if ($(window).width() <= 1020) {
+                offset = 72;
+            }
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - offset
+            }, 1000, function() {
+                history.pushState(null, null, target);
+            });
+
+            $('#navbar-toggle').removeAttr('checked')
+        }
+    })
+
 })
 
 window.onload = function() {
