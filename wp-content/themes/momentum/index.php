@@ -35,7 +35,7 @@
 
     <?php wp_head() ?>
 </head>
-<body class="font-body overflow-x-hidden text-[#3A3A3A]">
+<body class="font-body overflow-x-hidden text-[#3A3A3A] bg-[#F5F5F5]">
 
 <main id="content">
 
@@ -204,7 +204,7 @@
     <!-- E: About -->
 
     <!-- S: Service -->
-    <section id="service" class="service bg-[#F5F5F5] pt-[148px] pb-[80px]">
+    <section id="service" class="service mt-[68px] py-[80px]">
         <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Promise To You</h2>
             <div class="grid grid-cols-2 gap-[37px] w-full">
@@ -242,7 +242,7 @@
     <!-- E: Service -->
 
     <!-- S: Testimonial -->
-    <section id="testimonial" class="testimonial bg-[#F5F5F5] py-[80px]">
+    <section id="testimonial" class="testimonial py-[80px]">
         <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Let’s Hear What Others Say</h2>
             <div class="grid grid-cols-4 gap-[24px]">
@@ -303,7 +303,7 @@
     <!-- E: Testimonial -->
 
     <!-- S: Call to Action -->
-    <section id="cta" class="cta bg-[#F5F5F5] py-[80px]">
+    <section id="cta" class="cta py-[80px]">
         <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <div class="bg-[#F5DF4D] rounded-[24px] grid grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
                 <div class="flex flex-col items-start gap-[37px] py-14">
@@ -325,7 +325,7 @@
     <!-- E: Call to Action -->
 
     <!-- S: Digital Service -->
-    <section id="digital-service" class="digital-service bg-[#F5F5F5] py-[80px]">
+    <section id="digital-service" class="digital-service py-[80px]">
         <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Digital Services</h2>
             <div class="grid grid-cols-3 gap-[24px] w-full">
@@ -353,7 +353,7 @@
     <!-- E: Digital Service -->
 
     <!-- S: Portfolio -->
-    <section id="portfolio" class="portfolio bg-[#F5F5F5] py-[80px]">
+    <section id="portfolio" class="portfolio py-[80px]">
         <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
             <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Proud Works</h2>
             <div class="grid grid-cols-3 gap-[24px] w-full">
@@ -389,7 +389,7 @@
     <!-- E: QA -->
 
     <!-- S: Call to Action Bottom -->
-    <section id="cta-bottom" class="cta-bottom bg-[#F5F5F5] py-[80px] relative">
+    <section id="cta-bottom" class="cta-bottom py-[80px] relative">
         <div class="absolute pointer-events-none bg-[#3A3A3A] h-[50%] w-full bottom-0 left-0 z-[0] translate-y-[2px]"></div>
         <div class="container max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center relative z-[1]">
             <div class="bg-[#F5DF4D] rounded-[24px] grid grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
