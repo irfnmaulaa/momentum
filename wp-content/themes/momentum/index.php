@@ -411,9 +411,33 @@
     </section>
     <!-- E: Call to Action Bottom -->
 
-    <!-- S: Footer -->
+</main>
 
-    <!-- E: Footer -->
+<!-- S: Footer -->
+<footer id="footer" class="footer py-[80px] bg-[#3A3A3A] text-white">
+    <div class="container max-w-[1200px] mx-auto flex flex-col gap-32 items-center">
+        <div class="flex flex-col gap-12 w-full">
+            <img src="<?= get_stylesheet_directory_uri() . '/img/logo-long-white.png' ?>" alt="logo" width="240" height="45">
+            <div class="flex justify-between w-full">
+                <div class="text-[14px] whitespace-pre-line max-w-[560px]">PT Momentum Kreasi Indonesia
+
+                    Momentum adalah konsultan dan agensi Social Media Management yang membantu perusahaanmu membuat Profitable Brand & Digital Strategy yang kuat dan unik.
+
+                    Fokus kami adalah membuat perusahaanmu menjadi THE Top-of-Mind Brand, dan pastinya meningkatkan brand awareness, engagement serta mengembangkan komunitas Brand-mu.</div>
+                <div class="text-[14px] whitespace-pre-line max-w-[172px]">Consult With Us:
+
+                    P. (6221) 2228-1759
+                    M. (6281) 2300-97-323
+                    E. hello@buildmomentum.id
+
+                    Rukan Citta Graha, Blok 1J
+                    Kebon Jeruk, Jakarta 11520</div>
+            </div>
+        </div>
+        <p class="text-[12px]">© Copyright 2024 MOMENTUM, All Rights Reserved.</p>
+    </div>
+</footer>
+<!-- E: Footer -->
 
 <?php wp_footer() ?>
 </body>
