@@ -5,3 +5,27 @@ Author URI: https://irfanmaulana.com
 Description: Official Momentum Website Theme
 Version: 1.0.0
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("fonts/ProximaNova/ProximaNova-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("fonts/ProximaNova/Proxima Nova Semibold.otf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("fonts/ProximaNova/Proxima Nova Bold.otf");
+    font-weight: 700;
+    font-style: normal;
+}
