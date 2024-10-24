@@ -39,7 +39,7 @@
 
 <!-- S: Navbar -->
 <header class="fixed w-full top-[32px] left-0 z-[99]">
-    <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 peer-checked/nav:hidden">
+    <div class="container max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-8 peer-checked/nav:hidden">
         <div class="header-float bg-white rounded-[80px] relative flex items-center justify-between p-[16px] lg:px-[32px] shadow-lg h-[72px] lg:h-[108px] w-full">
             <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="peer absolute opacity-0 pointer-events-none">
             <h1 class="navbar-brand">
@@ -69,12 +69,12 @@
                     <?php endforeach; ?>
                 </ul>
             </nav>
-            <a href="<?= $menu->url ?>" target="_blank" class="btn truncate navbar-link py-3 px-4 peer-checked:hidden font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+            <a href="<?= $menu->url ?>" target="_blank" class="btn truncate navbar-link lg:hidden py-3 px-4 peer-checked:hidden font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
                 <span class="flex items-center justify-center gap-2 lg:gap-3">
                     Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
                 </span>
             </a>
-            <label for="navbar-toggle" class="w-[36px] h-[36px] bg-[#F5DF4D] rounded-full relative">
+            <label for="navbar-toggle" class="w-[36px] h-[36px] bg-[#F5DF4D] lg:hidden rounded-full relative">
                 <span class="bar-1 w-[18px] h-[2px] bg-[#3A3A3A] rounded-[20px] absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-4px] transition duration-200"></span>
                 <span class="bar-2 w-[18px] h-[2px] bg-[#3A3A3A] rounded-[20px] absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[4px] transition duration-200"></span>
             </label>
@@ -86,8 +86,8 @@
 <main id="content">
 
     <!-- S: Hero -->
-    <section id="hero" class="hero bg-[#D4C2AD] w-full pt-[136px] lg:pt-[172px] pb-[32px]">
-        <div class="container lg:px-8 max-w-[1200px] mx-auto">
+    <section id="hero" class="hero bg-[#D4C2AD] w-full pt-[148px] lg:pt-[172px] pb-[44px]">
+        <div class="container lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto">
             <div class="max-w-[800px] mx-auto bg-white px-[24px] lg:px-[40px] py-[24px]">
 
                 <div class="flex justify-between items-center mb-[16px]">
@@ -153,8 +153,8 @@
     <!-- E: Hero -->
 
     <!-- S: Partners -->
-    <section id="partners" class="partners w-full py-[50px] bg-[#3A3A3A]">
-        <div class="container px-4 sm:px-6 lg:px-8 w-full max-w-[1200px] flex items-center gap-8 mx-auto">
+    <section id="partners" class="partners w-full py-[32px] lg:py-[50px] bg-[#3A3A3A]">
+        <div class="container px-6 sm:px-8 lg:px-8 w-full max-w-[1200px] flex items-center gap-8 mx-auto">
             <?php foreach(range(1, 9) as $i): ?>
                 <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="h-[25px] lg:h-[60px]">
             <?php endforeach; ?>
@@ -163,10 +163,10 @@
     <!-- E: Partners -->
 
     <!-- S: About -->
-    <section id="about" class="about bg-[#F5DF4D] py-[80px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[45px]">
+    <section id="about" class="about bg-[#F5DF4D] py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[45px]">
             <div class="grid lg:grid-cols-[1fr,640px] rounded-[16px] overflow-hidden">
-                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/about-display.png' ?>)] bg-cover bg-center aspect-[312/208]"></div>
+                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/about-display.png' ?>)] bg-cover bg-center aspect-[312/208] lg:aspect-[unset]"></div>
                 <div class="p-[24px] lg:p-[48px] flex flex-col gap-[20px] lg:gap-[36px] bg-white items-start">
                     <h2 class="text-[22px] lg:text-[36px] font-heading font-bold">
                         Hi, Meet Momentum!
@@ -218,10 +218,10 @@
     <!-- E: About -->
 
     <!-- S: Service -->
-    <section id="service" class="service mt-[68px] py-[80px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+    <section id="service" class="service mt-[68px] py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
             <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Promise To You</h2>
-            <div class="grid lg:grid-cols-2 gap-[37px] w-full">
+            <div class="grid lg:grid-cols-2 gap-[22px] lg:gap-[37px] w-full">
                 <div class="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/service-1.png' ?>)] bg-cover bg-center"></div>
                     <div class="p-[24px] lg:p-[37px] flex flex-col gap-[16px] bg-white items-start">
@@ -256,10 +256,10 @@
     <!-- E: Service -->
 
     <!-- S: Testimonial -->
-    <section id="testimonial" class="testimonial py-[80px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Let’s Hear What Others Say</h2>
-            <div class="grid lg:grid-cols-4 gap-[24px]">
+    <section id="testimonial" class="testimonial py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
+            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Let's Hear What Others Say</h2>
+            <div class="grid lg:grid-cols-4 gap-[22px] lg:gap-[24px] lg:max-w-[unset] max-w-[282px]">
                 <div class="p-[24px] bg-white rounded-[16px] flex flex-col gap-[22px]">
                     <div class="flex items-center gap-3">
                         <img src="<?= get_stylesheet_directory_uri() . '/img/testi-user-1.png' ?>" width="40" height="40" alt="user">
@@ -317,20 +317,20 @@
     <!-- E: Testimonial -->
 
     <!-- S: Call to Action -->
-    <section id="cta" class="cta py-[80px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <div class="bg-[#F5DF4D] rounded-[24px] grid lg:grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
-                <div class="flex flex-col items-start gap-[37px] py-14">
+    <section id="cta" class="cta py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
+            <div class="bg-[#F5DF4D] rounded-[24px] grid lg:grid-cols-[600px,1fr] gap-[32px] lg:gap-[37px] w-full p-[24px] lg:pt-0 pb-0 lg:px-[76px]">
+                <div class="flex flex-col items-start gap-[22px] lg:gap-[37px] lg:py-14">
                     <h2 class="text-[22px] lg:text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
                         Brand Through Social Media?</h2>
-                    <a href="" target="_blank" class="py-3 px-4 text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
-                        <span class="btn truncate select-none flex items-center justify-center gap-2 lg:gap-3">
+                    <a href="" target="_blank" class="btn truncate select-none py-2 lg:py-3 px-3 lg:px-4 text-[12px] lg:text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+                        <span class="flex items-center justify-center gap-2 lg:gap-3">
                             Konsultasi dengan Expert Team Kami
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-call-white.png' ?>" alt="call" width="28" height="28">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-call-white.png' ?>" alt="call" width="28" height="28" class="w-[16px] lg:w-[28px]">
                         </span>
                     </a>
                 </div>
-                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/cta.png' ?>)] bg-contain bg-bottom bg-no-repeat">
+                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/cta.png' ?>)] bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]">
 
                 </div>
             </div>
@@ -339,25 +339,25 @@
     <!-- E: Call to Action -->
 
     <!-- S: Digital Service -->
-    <section id="digital-service" class="digital-service py-[80px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+    <section id="digital-service" class="digital-service py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
             <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Digital Services</h2>
-            <div class="grid grid-cols-3 gap-[24px] w-full">
+            <div class="grid lg:grid-cols-3 gap-[24px] w-full">
                 <div class="bg-white rounded-[8px] flex flex-col overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/digital-service-1.png' ?>)] w-full bg-cover bg-center aspect-[324/220]"></div>
-                    <div class="p-[24px] text-center font-bold text-[24px]">
-                        Organic Soecial Media
+                    <div class="p-[20px] lg:p-[24px] text-center font-bold text-[16px] lg:text-[24px]">
+                        Organic Special Media
                     </div>
                 </div>
                 <div class="bg-white rounded-[8px] flex flex-col overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/digital-service-2.png' ?>)] w-full bg-cover bg-center aspect-[324/220]"></div>
-                    <div class="p-[24px] text-center font-bold text-[24px]">
+                    <div class="p-[20px] lg:p-[24px] text-center font-bold text-[16px] lg:text-[24px]">
                         Paid (PPC) Social Media
                     </div>
                 </div>
                 <div class="bg-white rounded-[8px] flex flex-col overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/digital-service-3.png' ?>)] w-full bg-cover bg-center aspect-[324/220]"></div>
-                    <div class="p-[24px] text-center font-bold text-[24px]">
+                    <div class="p-[20px] lg:p-[24px] text-center font-bold text-[16px] lg:text-[24px]">
                         SEO, SEM & E-Commerce
                     </div>
                 </div>
@@ -367,12 +367,12 @@
     <!-- E: Digital Service -->
 
     <!-- S: Portfolio -->
-    <section id="portfolio" class="portfolio py-[80px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
+    <section id="portfolio" class="portfolio py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
             <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Proud Works</h2>
-            <div class="grid grid-cols-3 gap-[24px] w-full">
+            <div class="grid lg:grid-cols-3 gap-[24px] w-full">
                 <?php
-                 $portofolios = [
+                 $portfolios = [
                          'Orangedentalhouse',
                          'Sayakaya.id',
                          'Nathinofficial',
@@ -383,12 +383,12 @@
                          'Houseoflittlebunny.id',
                          'Faestheticofficial',
                  ];
-                 foreach($portofolios as $i => $porto):
+                 foreach($portfolios as $i => $porto):
                  ?>
                 <div class="bg-white rounded-[8px] flex flex-col overflow-hidden">
                     <div class="py-3 px-4 flex items-center gap-3">
                         <img src="<?= get_stylesheet_directory_uri() . '/img/porto-logo-'. ($i+1) .'.png' ?>" alt="logo" width="32" height="32 ">
-                        <span class="font-semibold text-[18px]"><?= $porto ?></span>
+                        <span class="font-semibold text-[16px] lg:text-[18px]"><?= $porto ?></span>
                     </div>
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/porto-poster-'. ($i+1) .'.png' ?>)] w-full bg-cover bg-center aspect-[1/1]"></div>
                 </div>
@@ -399,20 +399,20 @@
     <!-- E: Portfolio -->
 
     <!-- S: QA -->
-    <section id="qa" class="qa py-[80px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Got Questions? Look No Further!</h2>
-            <p class="text-[22px]">It's natural to have some questions. Here are some we generally get.</p>
+    <section id="qa" class="qa py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
+            <h2 class="text-center text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Got Questions? Look No Further!</h2>
+            <p class="text-center text-[14px] lg:text-[22px]">It's natural to have some questions. Here are some we generally get.</p>
             <div class="flex flex-col gap-[21px] w-full">
 
                 <div class="accordion">
                     <input id="qa-1" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
-                    <label for="qa-1" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                    <label for="qa-1" class="lg:py-3 lg:px-7 py-3 px-4 bg-white transition duration-200 peer-checked-lg:rounded-[24px] lg:rounded-[30px] rounded-[8px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
                         <span class="flex items-center justify-between w-full">
-                            <p class="text-[20px] font-bold">Apa yang membedakan Momentum dari Agensi Social Media Management lainnya?</p>
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                            <p class="text-[12px] lg:text-[20px] font-bold">Apa yang membedakan Momentum dari Agensi Social Media Management lainnya?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200 lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]">
                         </span>
-                        <span class="accordion-content pt-4">
+                        <span class="accordion-content pt-2 lg:pt-4 text-[12px] lg:text-[16px]">
                             Kami bukan advertising atau social media agency yang berfokus membuat konten, mengejar likes atau followers saja. Fokus kami adalah mengubah social media kamu menjadi lead generator machine dan membangun komunitas untuk brand perusahaanmu.
                         </span>
                     </label>
@@ -420,12 +420,12 @@
 
                 <div class="accordion">
                     <input id="qa-2" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
-                    <label for="qa-2" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                    <label for="qa-2" class="lg:py-3 lg:px-7 py-3 px-4 bg-white transition duration-200 peer-checked-lg:rounded-[24px] lg:rounded-[30px] rounded-[8px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
                         <span class="flex items-center justify-between w-full">
-                            <p class="text-[20px] font-bold">Apa saja yang termasuk dalam layanan Social Media Management Momentum?</p>
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                            <p class="text-[12px] lg:text-[20px] font-bold">Apa saja yang termasuk dalam layanan Social Media Management Momentum?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200 lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]">
                         </span>
-                        <span class="accordion-content pt-4">
+                        <span class="accordion-content pt-2 lg:pt-4 text-[12px] lg:text-[16px]">
                             Semua projek Social Media Management di Momentum dimulai dari Research (internal, target market, kompetitor, dan industri), sebelum akhirnya dilanjutkan dengan menentukan Target Market utamamu. Setelah itu, Momentum akan membuat Brand Campaign dan menentukan channel sebelum melanjutkan ke Media Buying untuk memastikan keefektifan budget digital marketing-mu.
                         </span>
                     </label>
@@ -433,12 +433,12 @@
 
                 <div class="accordion">
                     <input id="qa-3" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
-                    <label for="qa-3" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                    <label for="qa-3" class="lg:py-3 lg:px-7 py-3 px-4 bg-white transition duration-200 peer-checked-lg:rounded-[24px] lg:rounded-[30px] rounded-[8px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
                         <span class="flex items-center justify-between w-full">
-                            <p class="text-[20px] font-bold">Berapa lama projek Social Media Manegement di Momentum berlangsung?</p>
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                            <p class="text-[12px] lg:text-[20px] font-bold">Berapa lama projek Social Media Manegement di Momentum berlangsung?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200 lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]">
                         </span>
-                        <span class="accordion-content pt-4">
+                        <span class="accordion-content pt-2 lg:pt-4 text-[12px] lg:text-[16px]">
                             Waktu yang dibutuhkan untuk melihat keberhasilan Social Media Manegement tidak instan, terlebih jika ingin membangun komunitas yang aktif. Momentum menerapkan sistem management selama 6 hingga 12 bulan untuk mendapatkan hasil yang maksimal.
                         </span>
                     </label>
@@ -446,12 +446,12 @@
 
                 <div class="accordion">
                     <input id="qa-4" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
-                    <label for="qa-4" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                    <label for="qa-4" class="lg:py-3 lg:px-7 py-3 px-4 bg-white transition duration-200 peer-checked-lg:rounded-[24px] lg:rounded-[30px] rounded-[8px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
                         <span class="flex items-center justify-between w-full">
-                            <p class="text-[20px] font-bold">Industri apa yang menjadi spesialisasi dari Momentum?</p>
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                            <p class="text-[12px] lg:text-[20px] font-bold">Industri apa yang menjadi spesialisasi dari Momentum?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200 lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]">
                         </span>
-                        <span class="accordion-content pt-4">
+                        <span class="accordion-content pt-2 lg:pt-4 text-[12px] lg:text-[16px]">
                             Selama lebih dari 7 tahun berdiri, kami telah berhasil membantu ratusan Perusahaan, yang kebanyakan berada di industri properti, teknologi, banking & finance, healthcare, edukasi, wellness & beauty, retail dan bisnis lainnya.
                         </span>
                     </label>
@@ -459,12 +459,12 @@
 
                 <div class="accordion">
                     <input id="qa-5" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
-                    <label for="qa-5" class="py-3 px-7 bg-white transition duration-200 peer-checked:rounded-[24px] rounded-[30px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
+                    <label for="qa-5" class="lg:py-3 lg:px-7 py-3 px-4 bg-white transition duration-200 peer-checked-lg:rounded-[24px] lg:rounded-[30px] rounded-[8px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
                         <span class="flex items-center justify-between w-full">
-                            <p class="text-[20px] font-bold">Berapakah estimasi harga yang harus kami keluarkan?</p>
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200">
+                            <p class="text-[12px] lg:text-[20px] font-bold">Berapakah estimasi harga yang harus kami keluarkan?</p>
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200 lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]">
                         </span>
-                        <span class="accordion-content pt-4">
+                        <span class="accordion-content pt-2 lg:pt-4 text-[12px] lg:text-[16px]">
                             Investment value sangat bergantung pada kompleksitas projek dan goal yang ingin dicapai. Kami menyediakan beberapa paket Social Media Management dan juga projek yang bisa dikustom tergantung dengan kebutuhan bisnismu. Untuk lebih jelasnya silahkan hubungi kami di sini.
                         </span>
                     </label>
@@ -476,21 +476,21 @@
     <!-- E: QA -->
 
     <!-- S: Call to Action Bottom -->
-    <section id="cta-bottom" class="cta-bottom py-[80px] relative">
+    <section id="cta-bottom" class="cta-bottom py-[44px] lg:py-[80px] relative">
         <div class="absolute pointer-events-none bg-[#3A3A3A] h-[50%] w-full bottom-0 left-0 z-[0] translate-y-[2px]"></div>
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center relative z-[1]">
-            <div class="bg-[#F5DF4D] rounded-[24px] grid grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
-                <div class="flex flex-col items-start gap-[37px] py-14">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center relative z-[1]">
+            <div class="bg-[#F5DF4D] rounded-[24px] grid lg:grid-cols-[600px,1fr] gap-[32px] lg:gap-[37px] w-full p-[24px] pb-0 lg:px-[76px]">
+                <div class="flex flex-col items-start gap-[22px] lg:gap-[37px] lg:py-14">
                     <h2 class="text-[22px] lg:text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
                         Brand Through Social Media?</h2>
-                    <a href="" target="_blank" class="py-3 px-4 text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+                    <a href="" target="_blank" class="btn truncate select-none py-2 lg:py-3 px-3 lg:px-4 text-[12px] lg:text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
                         <span class="flex items-center justify-center gap-2 lg:gap-3">
                             Konsultasi dengan Expert Team Kami
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-call-white.png' ?>" alt="call" width="28" height="28">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-call-white.png' ?>" alt="call" width="28" height="28" class="w-[16px] lg:w-[28px]">
                         </span>
                     </a>
                 </div>
-                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/cta.png' ?>)] bg-contain bg-bottom bg-no-repeat">
+                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/cta.png' ?>)] bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]">
 
                 </div>
             </div>
@@ -501,17 +501,17 @@
 </main>
 
 <!-- S: Footer -->
-<footer id="footer" class="footer py-[80px] bg-[#3A3A3A] text-white">
-    <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-32 items-center">
-        <div class="flex flex-col gap-12 w-full">
-            <img src="<?= get_stylesheet_directory_uri() . '/img/logo-long-white.png' ?>" alt="logo" width="240" height="45">
-            <div class="flex justify-between w-full">
-                <div class="text-[14px] whitespace-pre-line max-w-[560px]">PT Momentum Kreasi Indonesia
+<footer id="footer" class="footer py-[44px] lg:py-[80px] bg-[#3A3A3A] text-white">
+    <div class="container px-6 sm:px-8 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-8 lg:gap-32 lg:items-center">
+        <div class="flex flex-col gap-8 lg:gap-12 w-full">
+            <img src="<?= get_stylesheet_directory_uri() . '/img/logo-long-white.png' ?>" alt="logo" width="240" height="45" class="lg:w-[240px] w-[120px]">
+            <div class="flex flex-col gap-8 lg:flex-row justify-between w-full">
+                <div class="text-[10px] lg:text-[14px] whitespace-pre-line max-w-[560px]">PT Momentum Kreasi Indonesia
 
                     Momentum adalah konsultan dan agensi Social Media Management yang membantu perusahaanmu membuat Profitable Brand & Digital Strategy yang kuat dan unik.
 
                     Fokus kami adalah membuat perusahaanmu menjadi THE Top-of-Mind Brand, dan pastinya meningkatkan brand awareness, engagement serta mengembangkan komunitas Brand-mu.</div>
-                <div class="text-[14px] whitespace-pre-line max-w-[172px]">Consult With Us:
+                <div class="text-[10px] lg:text-[14px] whitespace-pre-line max-w-[172px]">Consult With Us:
 
                     P. (6221) 2228-1759
                     M. (6281) 2300-97-323
@@ -521,7 +521,7 @@
                     Kebon Jeruk, Jakarta 11520</div>
             </div>
         </div>
-        <p class="text-[12px]">© Copyright 2024 MOMENTUM, All Rights Reserved.</p>
+        <p class="text-[8px] lg:text-[12px]">© Copyright 2024 MOMENTUM, All Rights Reserved.</p>
     </div>
 </footer>
 <!-- E: Footer -->
