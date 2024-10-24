@@ -39,3 +39,10 @@ Version: 1.0.0
 .input-qa:checked ~ label .accordion-content {
     display: block;
 }
+
+.peer:checked ~ label .bar-1 {
+    transform: translateX(-50%) translateY(0) rotate(45deg);
+}
+.peer:checked ~ label .bar-2 {
+    transform: translateX(-50%) translateY(0) rotate(-45deg);
+}

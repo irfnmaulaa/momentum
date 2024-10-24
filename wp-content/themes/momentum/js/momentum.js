@@ -21,6 +21,14 @@ $(document).ready(function () {
         }
     })
 
+    $('#navbar-toggle').on('change', function () {
+        if($(this).is(':checked')) {
+            $('.header-float').removeClass('shadow-lg')
+        } else {
+            $('.header-float').addClass('shadow-lg')
+        }
+    })
+
 })
 
 window.onload = function() {

@@ -39,23 +39,24 @@
 
 <!-- S: Navbar -->
 <header class="fixed w-full top-[32px] left-0 z-[99]">
-    <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-[80px] flex items-center justify-between px-[32px] shadow-lg h-[108px] w-full">
+    <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 peer-checked/nav:hidden">
+        <div class="header-float bg-white rounded-[80px] relative flex items-center justify-between p-[16px] lg:px-[32px] shadow-lg h-[72px] lg:h-[108px] w-full">
+            <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="peer absolute opacity-0 pointer-events-none">
             <h1 class="navbar-brand">
                 <a href="#hero">
                     <img src="<?= get_logo() ?>" alt="logo" width="199" height="40" class="logo hidden lg:inline-block">
                     <img src="<?= get_site_icon_url() ?>" alt="logo" width="40" height="40" class="logo-sm w-[40px] aspect-[1/1] inline-block lg:hidden">
                 </a>
             </h1>
-            <nav class="navbar-nav">
-                <ul class="navbar-menu flex items-center gap-[32px]">
+            <nav class="navbar-nav hidden lg:block peer-checked:block lg:static absolute top-0 left-0 pt-[100px] pb-[28px] lg:p-0 lg:z-[unset] z-[-1] w-full lg:w-auto bg-white rounded-[24px] lg:rounded-none">
+                <ul class="navbar-menu flex flex-col lg:flex-row items-center gap-[32px]">
                     <?php foreach(wp_get_nav_menu_items('Header') as $menu) : ?>
                         <?php if($menu->title === 'Consult With Us'): ?>
-                            <li class="navbar-item">
-                                <a href="<?= $menu->url ?>" target="_blank" class="navbar-link p-4 font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
-                                <span class="flex items-center justify-center gap-2 lg:gap-3">
-                                    Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
-                                </span>
+                            <li class="navbar-item flex items-center">
+                                <a href="<?= $menu->url ?>" target="_blank" class="btn truncate navbar-link p-4 font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+                                    <span class="flex items-center justify-center gap-2 lg:gap-3">
+                                        Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
+                                    </span>
                                 </a>
                             </li>
                         <?php else: ?>
@@ -68,6 +69,15 @@
                     <?php endforeach; ?>
                 </ul>
             </nav>
+            <a href="<?= $menu->url ?>" target="_blank" class="btn truncate navbar-link py-3 px-4 peer-checked:hidden font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+                <span class="flex items-center justify-center gap-2 lg:gap-3">
+                    Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
+                </span>
+            </a>
+            <label for="navbar-toggle" class="w-[36px] h-[36px] bg-[#F5DF4D] rounded-full relative">
+                <span class="bar-1 w-[18px] h-[2px] bg-[#3A3A3A] rounded-[20px] absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-4px] transition duration-200"></span>
+                <span class="bar-2 w-[18px] h-[2px] bg-[#3A3A3A] rounded-[20px] absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[4px] transition duration-200"></span>
+            </label>
         </div>
     </div>
 </header>
@@ -76,42 +86,42 @@
 <main id="content">
 
     <!-- S: Hero -->
-    <section id="hero" class="hero bg-[#D4C2AD] w-full pt-[172px] pb-[32px]">
-        <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
-            <div class="max-w-[800px] mx-auto bg-white px-[40px] py-[24px]">
+    <section id="hero" class="hero bg-[#D4C2AD] w-full pt-[136px] lg:pt-[172px] pb-[32px]">
+        <div class="container lg:px-8 max-w-[1200px] mx-auto">
+            <div class="max-w-[800px] mx-auto bg-white px-[24px] lg:px-[40px] py-[24px]">
 
                 <div class="flex justify-between items-center mb-[16px]">
                     <div class="flex items-center gap-2">
-                        <img src="<?= get_stylesheet_directory_uri() . '/img/hero-logo.png' ?>" width="32" height="32" alt="hero logo">
-                        <span class="font-semibold">buildmomentum.id</span>
+                        <img src="<?= get_stylesheet_directory_uri() . '/img/hero-logo.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="hero logo">
+                        <span class="font-semibold text-[12px] lg:text-[16px]">buildmomentum.id</span>
                     </div>
-                    <img src="<?= get_stylesheet_directory_uri() . '/img/icon-more.png' ?>" width="32" height="32" alt="hero logo">
+                    <img src="<?= get_stylesheet_directory_uri() . '/img/icon-more.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="hero logo">
                 </div>
 
-                <div class="mb-[24px] py-[43px] px-[47px] bg-[#F5DF4D] text-[#3A3A3A]">
+                <div class="mb-[24px] py-[30px] lg:py-[43px] px-[24px] lg:px-[47px] bg-[#F5DF4D] text-[#3A3A3A]">
 
-                    <h2 class="text-[40px] font-bold">
-                        Corporate Communication Team
+                    <h2 class="text-[24px] leading-[30px] lg:leading-[unset] lg:text-[40px] font-bold lg:whitespace-normal whitespace-pre-line">Corporate
+                        Communication Team
                     </h2>
-                    <div class="w-full h-[3px] bg-[#3A3A3A] mb-3"></div>
-                    <h3 class="text-[40px] font-bold mb-6">
+                    <div class="w-full h-[2px] lg:h-[3px] bg-[#3A3A3A] mb-3"></div>
+                    <h3 class="text-[24px] leading-[30px] lg:leading-[unset] lg:text-[40px] font-bold mb-6">
                         Lagi Cari Agensi untuk Handle Media Sosial Perusahaan? Tapi...
                     </h3>
                     <ul class="flex flex-col gap-2">
-                        <li class="flex items-center gap-4 text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o"></i>
+                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
+                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
                             Capek sama agensi sebelumnya yang gak bisa diandalkan?
                         </li>
-                        <li class="flex items-center gap-4 text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o"></i>
+                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
+                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
                             Tim internal lagi fokus sama project-project lain?
                         </li>
-                        <li class="flex items-center gap-4 text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o"></i>
+                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
+                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
                             Takut agensi slow respon dan ngilang?
                         </li>
-                        <li class="flex items-center gap-4 text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o"></i>
+                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
+                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
                             Punya pengalaman buruk sama agensi yang gak bisa capai KPI?
                         </li>
                     </ul>
@@ -119,22 +129,22 @@
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-[36px]">
-                        <div class="flex items-center gap-2 text-[20px] font-semibold">
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-like.png' ?>" width="32" height="32" alt="icon">
+                    <div class="flex items-center gap-[16px] lg:gap-[36px]">
+                        <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-like.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
                             428
                         </div>
-                        <div class="flex items-center gap-2 text-[20px] font-semibold">
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-comment.png' ?>" width="32" height="32" alt="icon">
+                        <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-comment.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
                             156
                         </div>
-                        <div class="flex items-center gap-2 text-[20px] font-semibold">
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-share.png' ?>" width="32" height="32" alt="icon">
+                        <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-share.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
                             87
                         </div>
                     </div>
 
-                    <img src="<?= get_stylesheet_directory_uri() . '/img/icon-bookmark.png' ?>" width="32" height="32" alt="icon">
+                    <img src="<?= get_stylesheet_directory_uri() . '/img/icon-bookmark.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
                 </div>
 
             </div>
@@ -146,7 +156,7 @@
     <section id="partners" class="partners w-full py-[50px] bg-[#3A3A3A]">
         <div class="container px-4 sm:px-6 lg:px-8 w-full max-w-[1200px] flex items-center gap-8 mx-auto">
             <?php foreach(range(1, 9) as $i): ?>
-                <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>">
+                <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="h-[25px] lg:h-[60px]">
             <?php endforeach; ?>
         </div>
     </section>
@@ -155,51 +165,51 @@
     <!-- S: About -->
     <section id="about" class="about bg-[#F5DF4D] py-[80px]">
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[45px]">
-            <div class="grid grid-cols-[1fr,640px] rounded-[16px] overflow-hidden">
-                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/about-display.png' ?>)] bg-cover bg-center"></div>
-                <div class="p-[48px] flex flex-col gap-[36px] bg-white items-start">
-                    <h2 class="text-[36px] font-heading font-bold">
+            <div class="grid lg:grid-cols-[1fr,640px] rounded-[16px] overflow-hidden">
+                <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/about-display.png' ?>)] bg-cover bg-center aspect-[312/208]"></div>
+                <div class="p-[24px] lg:p-[48px] flex flex-col gap-[20px] lg:gap-[36px] bg-white items-start">
+                    <h2 class="text-[22px] lg:text-[36px] font-heading font-bold">
                         Hi, Meet Momentum!
                     </h2>
-                    <div class="flex flex-col gap-[16px] font-semibold text-[18px]">
+                    <div class="flex flex-col gap-[16px] font-semibold text-[12px] lg:text-[18px]">
                         <p>Sebagai digital agency yang fokus bikin Perusahaanmu lebih Digitally Profitable di media sosial, kami membantu:</p>
                         <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-3">
-                                <i class="fa fa-check-circle-o"></i>
+                            <li class="flex lg:items-center gap-2 lg:gap-3">
+                                <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
                                 Bangun Engagement yang bikin audiens betah follow akunmu,
                             </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa fa-check-circle-o"></i>
+                            <li class="flex lg:items-center gap-2 lg:gap-3">
+                                <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
                                 Buat Creative Content yang relatable sama target audiensmu,
                             </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa fa-check-circle-o"></i>
+                            <li class="flex lg:items-center gap-2 lg:gap-3">
+                                <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
                                 Convert followers pasif kamu jadi komunitas yang aktif!
                             </li>
                         </ul>
                     </div>
-                    <a href="" target="_blank" class="py-3 px-4 text-[18px] font-semibold rounded-[30px] border-[#3A3A3A] border inline-block">
+                    <a href="" target="_blank" class="btn truncate select-none py-2 lg:py-3 px-3 lg:px-4 text-[12px] lg:text-[18px] font-semibold rounded-[30px] border-[#3A3A3A] border inline-block">
                         <span class="flex items-center justify-center gap-2 lg:gap-3">
                             Konsultasi dengan Expert Team Kami
-                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-call.png' ?>" alt="call" width="28" height="28">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-call.png' ?>" alt="call" width="28" height="28" class="w-[16px] lg:w-[28px]">
                         </span>
                     </a>
                 </div>
             </div>
             <div class="grid grid-cols-[1fr,1fr,1fr]">
-                <div class="flex items-center justify-center gap-7 border-r-[2px] border-[#3A3A3A]">
-                    <div class="text-[64px] font-bold leading-[1]">300+</div>
-                    <div class="whitespace-pre-line text-[20px] font-bold leading-[28px]">Brands
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-7 border-r-[2px] border-[#3A3A3A]">
+                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]">300+</div>
+                    <div class="whitespace-pre-line text-[12px] lg:text-[20px] font-bold leading-[14px] lg:leading-[28px]">Brands
                         Consulted</div>
                 </div>
-                <div class="flex items-center justify-center gap-7 border-r-[2px] border-[#3A3A3A]">
-                    <div class="text-[64px] font-bold leading-[1]">100k</div>
-                    <div class="whitespace-pre-line text-[20px] font-bold leading-[28px]">Leads
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-7 border-r-[2px] border-[#3A3A3A]">
+                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]">100k</div>
+                    <div class="whitespace-pre-line text-[12px] lg:text-[20px] font-bold leading-[14px] lg:leading-[28px]">Leads
                     Generated</div>
                 </div>
-                <div class="flex items-center justify-center gap-7">
-                    <div class="text-[64px] font-bold leading-[1]">97%</div>
-                    <div class="whitespace-pre-line text-[20px] font-bold leading-[28px]">Client's
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-7">
+                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]">97%</div>
+                    <div class="whitespace-pre-line text-[12px] lg:text-[20px] font-bold leading-[14px] lg:leading-[28px]">Client's
                         Satisfaction</div>
                 </div>
             </div>
@@ -210,34 +220,34 @@
     <!-- S: Service -->
     <section id="service" class="service mt-[68px] py-[80px]">
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Promise To You</h2>
-            <div class="grid grid-cols-2 gap-[37px] w-full">
-                <div class="grid grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
+            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Promise To You</h2>
+            <div class="grid lg:grid-cols-2 gap-[37px] w-full">
+                <div class="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/service-1.png' ?>)] bg-cover bg-center"></div>
-                    <div class="p-[37px] flex flex-col gap-[16px] bg-white items-start">
-                        <h3 class="text-[20px] font-bold">More Impact</h3>
-                        <p class="text-[18px]">Di saat agensi lain hanya mengejar likes, followers, dan engagement saja, Momentum lebih fokus mengubah audiens jadi komunitas aktif melalui campaign yang impactful!</p>
+                    <div class="p-[24px] lg:p-[37px] flex flex-col gap-[16px] bg-white items-start">
+                        <h3 class="text-[12px] lg:text-[20px] font-bold">More Impact</h3>
+                        <p class="text-[12px] lg:text-[18px]">Di saat agensi lain hanya mengejar likes, followers, dan engagement saja, Momentum lebih fokus mengubah audiens jadi komunitas aktif melalui campaign yang impactful!</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
+                <div class="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/service-2.png' ?>)] bg-cover bg-center"></div>
-                    <div class="p-[37px] flex flex-col gap-[16px] bg-white items-start">
-                        <h3 class="text-[20px] font-bold">Top-of-Mind Brand</h3>
-                        <p class="text-[18px]">Kami berjanji akan membuat brandmu menjadi the Top-of-Mind brand yang akan disukai target market di industrimu dan bersaing dengan market leader.</p>
+                    <div class="p-[24px] lg:p-[37px] flex flex-col gap-[16px] bg-white items-start">
+                        <h3 class="text-[12px] lg:text-[20px] font-bold">Top-of-Mind Brand</h3>
+                        <p class="text-[12px] lg:text-[18px]">Kami berjanji akan membuat brandmu menjadi the Top-of-Mind brand yang akan disukai target market di industrimu dan bersaing dengan market leader.</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
+                <div class="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/service-3.png' ?>)] bg-cover bg-center"></div>
-                    <div class="p-[37px] flex flex-col gap-[16px] bg-white items-start">
-                        <h3 class="text-[20px] font-bold">Data-driven Strategy</h3>
-                        <p class="text-[18px]">Di Momentum, kami tidak hanya menerka-nerka. Framework social media management kami dimulai dengan riset sebelum membuat strategi yang unik untuk perusahaanmu.</p>
+                    <div class="p-[24px] lg:p-[37px] flex flex-col gap-[16px] bg-white items-start">
+                        <h3 class="text-[12px] lg:text-[20px] font-bold">Data-driven Strategy</h3>
+                        <p class="text-[12px] lg:text-[18px]">Di Momentum, kami tidak hanya menerka-nerka. Framework social media management kami dimulai dengan riset sebelum membuat strategi yang unik untuk perusahaanmu.</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
+                <div class="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/service-4.png' ?>)] bg-cover bg-center"></div>
-                    <div class="p-[37px] flex flex-col gap-[16px] bg-white items-start">
-                        <h3 class="text-[20px] font-bold">Committed Experts</h3>
-                        <p class="text-[18px]">Kesuksesanmu adalah kesuksesan kami. Momentum memberikan komitmen penuh melalui tim kami yang fast respone untuk menjawab semua permasalahanmu.</p>
+                    <div class="p-[24px] lg:p-[37px] flex flex-col gap-[16px] bg-white items-start">
+                        <h3 class="text-[12px] lg:text-[20px] font-bold">Committed Experts</h3>
+                        <p class="text-[12px] lg:text-[18px]">Kesuksesanmu adalah kesuksesan kami. Momentum memberikan komitmen penuh melalui tim kami yang fast respone untuk menjawab semua permasalahanmu.</p>
                     </div>
                 </div>
             </div>
@@ -248,17 +258,17 @@
     <!-- S: Testimonial -->
     <section id="testimonial" class="testimonial py-[80px]">
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Let’s Hear What Others Say</h2>
-            <div class="grid grid-cols-4 gap-[24px]">
+            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Let’s Hear What Others Say</h2>
+            <div class="grid lg:grid-cols-4 gap-[24px]">
                 <div class="p-[24px] bg-white rounded-[16px] flex flex-col gap-[22px]">
                     <div class="flex items-center gap-3">
                         <img src="<?= get_stylesheet_directory_uri() . '/img/testi-user-1.png' ?>" width="40" height="40" alt="user">
                         <span class="font-semibold text-[18px]">Mas Amri</span>
                     </div>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         5 tahun terakhir cuma fokus dapet leads dari offline. Setelah dibantu Momentum, sekarang bisa dapetin 100an leads per hari dari sosmed. mantap poll , super sekali!
                     </p>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         Nathin - Maklon Herbal
                     </p>
                 </div>
@@ -267,10 +277,10 @@
                         <img src="<?= get_stylesheet_directory_uri() . '/img/testi-user-2.png' ?>" width="40" height="40" alt="user">
                         <span class="font-semibold text-[18px]">Agustinus Setiawan</span>
                     </div>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         Branding Viva Wisata jadi lebih terarah, kami juga merasakan sekali kebanjiran leads. Thank you bgt buat Momentum, sukses terus! Dan yang pasti kita gak akan berhenti kerjasama, thankyou!!
                     </p>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         Viva Wisata - Tour & Travel
                     </p>
                 </div>
@@ -279,10 +289,10 @@
                         <img src="<?= get_stylesheet_directory_uri() . '/img/testi-user-3.png' ?>" width="40" height="40" alt="user">
                         <span class="font-semibold text-[18px]">Joko Suyanto</span>
                     </div>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         5 tahun terakhir cuma fokus dapet leads dari offline. Setelah dibantu Momentum, sekarang bisa dapetin 100an leads per hari dari sosmed. mantap poll , super sekali!
                     </p>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         Faesthetic - Skincare
                     </p>
                 </div>
@@ -291,10 +301,10 @@
                         <img src="<?= get_stylesheet_directory_uri() . '/img/testi-user-4.png' ?>" width="40" height="40" alt="user">
                         <span class="font-semibold text-[18px]">Joko Suyanto</span>
                     </div>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         5 tahun terakhir cuma fokus dapet leads dari offline. Setelah dibantu Momentum, sekarang bisa dapetin 100an leads per hari dari sosmed. mantap poll , super sekali!
                     </p>
-                    <p class="text-[14px]">
+                    <p class="text-[12px] lg:text-[14px]">
                         Jtrip.id - Private Tour Jepang
                     </p>
                 </div>
@@ -309,12 +319,12 @@
     <!-- S: Call to Action -->
     <section id="cta" class="cta py-[80px]">
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <div class="bg-[#F5DF4D] rounded-[24px] grid grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
+            <div class="bg-[#F5DF4D] rounded-[24px] grid lg:grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
                 <div class="flex flex-col items-start gap-[37px] py-14">
-                    <h2 class="text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
+                    <h2 class="text-[22px] lg:text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
                         Brand Through Social Media?</h2>
                     <a href="" target="_blank" class="py-3 px-4 text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
-                        <span class="flex items-center justify-center gap-2 lg:gap-3">
+                        <span class="btn truncate select-none flex items-center justify-center gap-2 lg:gap-3">
                             Konsultasi dengan Expert Team Kami
                             <img src="<?= get_stylesheet_directory_uri() . '/img/icon-call-white.png' ?>" alt="call" width="28" height="28">
                         </span>
@@ -331,7 +341,7 @@
     <!-- S: Digital Service -->
     <section id="digital-service" class="digital-service py-[80px]">
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Digital Services</h2>
+            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Digital Services</h2>
             <div class="grid grid-cols-3 gap-[24px] w-full">
                 <div class="bg-white rounded-[8px] flex flex-col overflow-hidden">
                     <div class="bg-[url(<?= get_stylesheet_directory_uri() . '/img/digital-service-1.png' ?>)] w-full bg-cover bg-center aspect-[324/220]"></div>
@@ -359,7 +369,7 @@
     <!-- S: Portfolio -->
     <section id="portfolio" class="portfolio py-[80px]">
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Proud Works</h2>
+            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Our Proud Works</h2>
             <div class="grid grid-cols-3 gap-[24px] w-full">
                 <?php
                  $portofolios = [
@@ -391,7 +401,7 @@
     <!-- S: QA -->
     <section id="qa" class="qa py-[80px]">
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center">
-            <h2 class="text-[40px] font-bold font-heading whitespace-pre-line text-center">Got Questions? Look No Further!</h2>
+            <h2 class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center">Got Questions? Look No Further!</h2>
             <p class="text-[22px]">It's natural to have some questions. Here are some we generally get.</p>
             <div class="flex flex-col gap-[21px] w-full">
 
@@ -471,7 +481,7 @@
         <div class="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[52px] items-center relative z-[1]">
             <div class="bg-[#F5DF4D] rounded-[24px] grid grid-cols-[6fr,4fr] gap-[37px] w-full px-[76px]">
                 <div class="flex flex-col items-start gap-[37px] py-14">
-                    <h2 class="text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
+                    <h2 class="text-[22px] lg:text-[40px] font-bold font-heading">Ready to Build Your Top of Mind
                         Brand Through Social Media?</h2>
                     <a href="" target="_blank" class="py-3 px-4 text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
                         <span class="flex items-center justify-center gap-2 lg:gap-3">
