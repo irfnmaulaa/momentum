@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= get_bloginfo('name') ?></title>
-    <meta name="description" content="Official website of momentum indonesia">
+    <meta name="description" content="Branding Agency in Jakarta That'll Transform Your Business into A Digitally Profitable Brand. Let's Talk to See How We Can Work Together!">
     <meta name="keywords" content="momentum,id">
     <meta name="author" content="Ahmad Irfan Maulana">
 
@@ -19,15 +19,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:url" content="<?= site_url() ?>">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Momentum - Official Website">
-    <meta property="og:description" content="Official website of momentum indonesia">
+    <meta property="og:title" content="Branding Agency Jakarta - Build Momentum">
+    <meta property="og:description" content="Branding Agency in Jakarta That'll Transform Your Business into A Digitally Profitable Brand. Let's Talk to See How We Can Work Together!">
     <meta property="og:image" content="<?= get_template_directory_uri() . '/img/momentum.png' ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="<?= site_url() ?>">
-    <meta property="twitter:title" content="Momentum - Official Website">
-    <meta property="twitter:description" content="Official website of momentum indonesia">
+    <meta property="twitter:title" content="Branding Agency Jakarta - Build Momentum">
+    <meta property="twitter:description" content="Branding Agency in Jakarta That'll Transform Your Business into A Digitally Profitable Brand. Let's Talk to See How We Can Work Together!">
     <meta property="twitter:image" content="<?= get_template_directory_uri() . '/img/momentum.png' ?>">
 
     <!-- Canonical URL -->
