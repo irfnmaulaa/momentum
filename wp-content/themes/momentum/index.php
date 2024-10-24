@@ -37,43 +37,43 @@
 </head>
 <body class="font-body overflow-x-hidden text-[#3A3A3A] bg-[#F5F5F5]">
 
-<main id="content">
-
-    <!-- S: Navbar -->
-    <header class="fixed w-full top-[32px] left-0">
-        <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-[80px] flex items-center justify-between px-[32px] z-[99] shadow-lg h-[108px] w-full">
-                <h1 class="navbar-brand">
-                    <a href="#hero">
-                        <img src="<?= get_logo() ?>" alt="logo" width="199" height="40" class="logo hidden lg:inline-block">
-                        <img src="<?= get_site_icon_url() ?>" alt="logo" width="40" height="40" class="logo-sm w-[40px] aspect-[1/1] inline-block lg:hidden">
-                    </a>
-                </h1>
-                <nav class="navbar-nav">
-                    <ul class="navbar-menu flex items-center gap-[32px]">
-                        <?php foreach(wp_get_nav_menu_items('Header') as $menu) : ?>
-                            <?php if($menu->title === 'Consult With Us'): ?>
-                                <li class="navbar-item">
-                                    <a href="<?= $menu->url ?>" target="_blank" class="navbar-link p-4 font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+<!-- S: Navbar -->
+<header class="fixed w-full top-[32px] left-0 z-[99]">
+    <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-[80px] flex items-center justify-between px-[32px] shadow-lg h-[108px] w-full">
+            <h1 class="navbar-brand">
+                <a href="#hero">
+                    <img src="<?= get_logo() ?>" alt="logo" width="199" height="40" class="logo hidden lg:inline-block">
+                    <img src="<?= get_site_icon_url() ?>" alt="logo" width="40" height="40" class="logo-sm w-[40px] aspect-[1/1] inline-block lg:hidden">
+                </a>
+            </h1>
+            <nav class="navbar-nav">
+                <ul class="navbar-menu flex items-center gap-[32px]">
+                    <?php foreach(wp_get_nav_menu_items('Header') as $menu) : ?>
+                        <?php if($menu->title === 'Consult With Us'): ?>
+                            <li class="navbar-item">
+                                <a href="<?= $menu->url ?>" target="_blank" class="navbar-link p-4 font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
                                 <span class="flex items-center justify-center gap-2 lg:gap-3">
                                     Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
                                 </span>
-                                    </a>
-                                </li>
-                            <?php else: ?>
-                                <li class="navbar-item">
-                                    <a href="<?= $menu->url ?>" class="navbar-link transition duration-100 font-semibold">
-                                        <?= $menu->title ?>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </ul>
-                </nav>
-            </div>
+                                </a>
+                            </li>
+                        <?php else: ?>
+                            <li class="navbar-item">
+                                <a href="<?= $menu->url ?>" class="navbar-link transition duration-100 font-semibold">
+                                    <?= $menu->title ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </nav>
         </div>
-    </header>
-    <!-- E: Navbar -->
+    </div>
+</header>
+<!-- E: Navbar -->
+
+<main id="content">
 
     <!-- S: Hero -->
     <section id="hero" class="hero bg-[#D4C2AD] w-full pt-[172px] pb-[32px]">
