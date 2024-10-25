@@ -108,20 +108,20 @@
                         Lagi Cari Agensi untuk Handle Media Sosial Perusahaan? Tapi...
                     </h3>
                     <ul class="flex flex-col gap-2">
-                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
+                        <li class="flex items-start lg:items-center gap-2 lg:gap-3 text-[12px] lg:text-[18px] font-semibold">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-check.png' ?>" alt="icon check" width="16" height="16">
                             Capek sama agensi sebelumnya yang gak bisa diandalkan?
                         </li>
-                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
+                        <li class="flex items-start lg:items-center gap-2 lg:gap-3 text-[12px] lg:text-[18px] font-semibold">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-check.png' ?>" alt="icon check" width="16" height="16">
                             Tim internal lagi fokus sama project-project lain?
                         </li>
-                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
+                        <li class="flex items-start lg:items-center gap-2 lg:gap-3 text-[12px] lg:text-[18px] font-semibold">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-check.png' ?>" alt="icon check" width="16" height="16">
                             Takut agensi slow respon dan ngilang?
                         </li>
-                        <li class="flex lg:items-center gap-2 lg:gap-4 text-[12px] lg:text-[18px] font-semibold">
-                            <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
+                        <li class="flex items-start lg:items-center gap-2 lg:gap-3 text-[12px] lg:text-[18px] font-semibold">
+                            <img src="<?= get_stylesheet_directory_uri() . '/img/icon-check.png' ?>" alt="icon check" width="16" height="16">
                             Punya pengalaman buruk sama agensi yang gak bisa capai KPI?
                         </li>
                     </ul>
@@ -155,23 +155,23 @@
     <!-- S: Partners -->
     <section id="partners" class="partners w-full py-[32px] lg:py-[50px] bg-[#3A3A3A]">
         <div class="max-w-[2400px] mx-auto overflow-hidden">
-            <div class="marquee partners-wrap flex items-center gap-16 w-[200%] overflow-hidden">
-                <div class="partner-logos flex items-center gap-16 flex-none">
+            <div class="marquee partners-wrap flex items-center gap-8 lg:gap-16 w-[200%] overflow-hidden">
+                <div class="partner-logos flex items-center gap-8 lg:gap-16 flex-none">
                     <?php foreach(range(1, 9) as $i): ?>
                         <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
                     <?php endforeach; ?>
                 </div>
-                <div class="partner-logos flex items-center gap-16 flex-none">
+                <div class="partner-logos flex items-center gap-8 lg:gap-16 flex-none">
                     <?php foreach(range(1, 9) as $i): ?>
                         <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
                     <?php endforeach; ?>
                 </div>
-                <div class="partner-logos flex items-center gap-16 flex-none">
+                <div class="partner-logos flex items-center gap-8 lg:gap-16 flex-none">
                     <?php foreach(range(1, 9) as $i): ?>
                         <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
                     <?php endforeach; ?>
                 </div>
-                <div class="partner-logos flex items-center gap-16 flex-none">
+                <div class="partner-logos flex items-center gap-8 lg:gap-16 flex-none">
                     <?php foreach(range(1, 9) as $i): ?>
                         <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
                     <?php endforeach; ?>
@@ -193,16 +193,16 @@
                     <div class="flex flex-col gap-[16px] font-semibold text-[12px] lg:text-[18px]">
                         <p>Sebagai digital agency yang fokus bikin Perusahaanmu lebih Digitally Profitable di media sosial, kami membantu:</p>
                         <ul class="flex flex-col gap-2">
-                            <li class="flex lg:items-center gap-2 lg:gap-3">
-                                <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
+                            <li class="flex items-start lg:items-center gap-2 lg:gap-3">
+                                <img src="<?= get_stylesheet_directory_uri() . '/img/icon-check.png' ?>" alt="icon check" width="16" height="16">
                                 Bangun Engagement yang bikin audiens betah follow akunmu,
                             </li>
-                            <li class="flex lg:items-center gap-2 lg:gap-3">
-                                <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
+                            <li class="flex items-start lg:items-center gap-2 lg:gap-3">
+                                <img src="<?= get_stylesheet_directory_uri() . '/img/icon-check.png' ?>" alt="icon check" width="16" height="16">
                                 Buat Creative Content yang relatable sama target audiensmu,
                             </li>
-                            <li class="flex lg:items-center gap-2 lg:gap-3">
-                                <i class="fa fa-check-circle-o mt-1 lg:mt-0"></i>
+                            <li class="flex items-start lg:items-center gap-2 lg:gap-3">
+                                <img src="<?= get_stylesheet_directory_uri() . '/img/icon-check.png' ?>" alt="icon check" width="16" height="16">
                                 Convert followers pasif kamu jadi komunitas yang aktif!
                             </li>
                         </ul>

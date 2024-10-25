@@ -48,7 +48,17 @@ Version: 1.0.0
 }
 
 .marquee {
-    animation: marqueAnim 25s linear infinite;
+    animation: marqueAnim 5s linear infinite;
+}
+@media (min-width: 768px) {
+    .marquee {
+        animation: marqueAnim 10s linear infinite;
+    }
+}
+@media (min-width: 1080px) {
+    .marquee {
+        animation: marqueAnim 25s linear infinite;
+    }
 }
 @keyframes marqueAnim {
     from {
