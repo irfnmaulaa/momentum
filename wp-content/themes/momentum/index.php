@@ -100,9 +100,17 @@
 
                 <div class="mb-[24px] py-[30px] lg:py-[43px] px-[24px] lg:px-[47px] bg-[#F5DF4D] text-[#3A3A3A]">
 
-                    <h2 class="text-[24px] leading-[30px] lg:leading-[unset] lg:text-[40px] font-bold lg:whitespace-normal whitespace-pre-line">Corporate
-                        Communication Team
-                    </h2>
+                    <div class="rolling-text-container relative overflow-hidden">
+                        <h2 class="rolling-text text-[24px] leading-[30px] lg:leading-[unset] lg:text-[40px] font-bold lg:whitespace-normal whitespace-pre-line">Corporate
+                            Communication Team
+                        </h2>
+                        <h2 class="rolling-text absolute top-0 translate-y-[-100%] text-[24px] leading-[30px] lg:leading-[unset] lg:text-[40px] font-bold lg:whitespace-normal whitespace-pre-line">Corporate
+                            Communication Team
+                        </h2>
+                        <h2 class="rolling-text absolute top-0 translate-y-[-100%] text-[24px] leading-[30px] lg:leading-[unset] lg:text-[40px] font-bold lg:whitespace-normal whitespace-pre-line">Corporate
+                            Communication Team
+                        </h2>
+                    </div>
                     <div class="w-full h-[2px] lg:h-[3px] bg-[#3A3A3A] mb-3"></div>
                     <h3 class="text-[24px] leading-[30px] lg:leading-[unset] lg:text-[40px] font-bold mb-6">
                         Lagi Cari Agensi untuk Handle Media Sosial Perusahaan? Tapi...
@@ -132,15 +140,21 @@
                     <div class="flex items-center gap-[16px] lg:gap-[36px]">
                         <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
                             <img src="<?= get_stylesheet_directory_uri() . '/img/icon-like.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
-                            428
+                            <span class="counter">
+                                428
+                            </span>
                         </div>
                         <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
                             <img src="<?= get_stylesheet_directory_uri() . '/img/icon-comment.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
-                            156
+                            <span class="counter">
+                                156
+                            </span>
                         </div>
                         <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
                             <img src="<?= get_stylesheet_directory_uri() . '/img/icon-share.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
-                            87
+                            <span class="counter">
+                                87
+                            </span>
                         </div>
                     </div>
 
