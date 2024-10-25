@@ -154,10 +154,29 @@
 
     <!-- S: Partners -->
     <section id="partners" class="partners w-full py-[32px] lg:py-[50px] bg-[#3A3A3A]">
-        <div class="container px-6 sm:px-8 lg:px-8 w-full max-w-[1200px] flex items-center gap-8 mx-auto">
-            <?php foreach(range(1, 9) as $i): ?>
-                <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="h-[25px] lg:h-[60px]">
-            <?php endforeach; ?>
+        <div class="max-w-[2400px] mx-auto overflow-hidden">
+            <div class="marquee partners-wrap flex items-center gap-16 w-[200%] overflow-hidden">
+                <div class="partner-logos flex items-center gap-16 flex-none">
+                    <?php foreach(range(1, 9) as $i): ?>
+                        <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
+                    <?php endforeach; ?>
+                </div>
+                <div class="partner-logos flex items-center gap-16 flex-none">
+                    <?php foreach(range(1, 9) as $i): ?>
+                        <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
+                    <?php endforeach; ?>
+                </div>
+                <div class="partner-logos flex items-center gap-16 flex-none">
+                    <?php foreach(range(1, 9) as $i): ?>
+                        <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
+                    <?php endforeach; ?>
+                </div>
+                <div class="partner-logos flex items-center gap-16 flex-none">
+                    <?php foreach(range(1, 9) as $i): ?>
+                        <img src="<?= get_stylesheet_directory_uri() . '/img/partner-'. $i .'.png' ?>" alt="partner-<?= $i ?>" class="max-h-[25px] lg:max-h-[40px]">
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
     </section>
     <!-- E: Partners -->

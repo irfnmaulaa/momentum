@@ -46,3 +46,15 @@ Version: 1.0.0
 .peer:checked ~ label .bar-2 {
     transform: translateX(-50%) translateY(0) rotate(-45deg);
 }
+
+.marquee {
+    animation: marqueAnim 25s linear infinite;
+}
+@keyframes marqueAnim {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
