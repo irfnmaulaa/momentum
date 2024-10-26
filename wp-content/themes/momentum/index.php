@@ -140,19 +140,19 @@
                     <div class="flex items-center gap-[16px] lg:gap-[36px]">
                         <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
                             <img src="<?= get_stylesheet_directory_uri() . '/img/icon-like.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
-                            <span class="counter">
+                            <span class="counter" data-duration="2000">
                                 428
                             </span>
                         </div>
                         <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
                             <img src="<?= get_stylesheet_directory_uri() . '/img/icon-comment.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
-                            <span class="counter">
+                            <span class="counter" data-duration="2100">
                                 156
                             </span>
                         </div>
                         <div class="flex items-center gap-1 lg:gap-2 text-[12px] lg:text-[20px] font-semibold">
                             <img src="<?= get_stylesheet_directory_uri() . '/img/icon-share.png' ?>" class="w-[20px] lg:w-[32px]" width="32" height="32" alt="icon">
-                            <span class="counter">
+                            <span class="counter" data-duration="2200">
                                 87
                             </span>
                         </div>
@@ -231,17 +231,17 @@
             </div>
             <div class="grid grid-cols-[1fr,1fr,1fr]">
                 <div class="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-7 border-r-[2px] border-[#3A3A3A]">
-                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]">300+</div>
+                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]"><span class="counter" data-duration="1500">300</span>+</div>
                     <div class="whitespace-pre-line text-[12px] lg:text-[20px] font-bold leading-[14px] lg:leading-[28px]">Brands
                         Consulted</div>
                 </div>
                 <div class="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-7 border-r-[2px] border-[#3A3A3A]">
-                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]">100k</div>
+                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]"><span class="counter" data-duration="1700">100</span>k</div>
                     <div class="whitespace-pre-line text-[12px] lg:text-[20px] font-bold leading-[14px] lg:leading-[28px]">Leads
                     Generated</div>
                 </div>
                 <div class="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-7">
-                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]">97%</div>
+                    <div class="text-[30px] lg:text-[64px] font-bold leading-[1]"><span class="counter" data-duration="1900">97</span>%</div>
                     <div class="whitespace-pre-line text-[12px] lg:text-[20px] font-bold leading-[14px] lg:leading-[28px]">Client's
                         Satisfaction</div>
                 </div>
@@ -342,9 +342,28 @@
                     </p>
                 </div>
             </div>
-            <div class="max-w-[800px]">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/8aZdmgULYuo?si=vtoCvLmG6aVx2j0P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <?php if($testimonial_video = get_field('testimonial_video_desktop', get_the_ID())): ?>
+            <div class="testimonial-video max-w-[800px] relative hidden lg:block">
+                <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
+                <div class="testimonial-video-btn absolute w-full h-full bg-black bg-[url(<?= $testimonial_video['poster'] ?>)] bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
+                    <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
+                        <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
+                    </div>
+                </div>
             </div>
+            <?php endif; ?>
+
+            <?php if($testimonial_video = get_field('testimonial_video_mobile', get_the_ID())): ?>
+                <div class="testimonial-video max-w-[600px] relative block lg:hidden">
+                    <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
+                    <div class="testimonial-video-btn absolute w-full h-full bg-black bg-[url(<?= $testimonial_video['poster'] ?>)] bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
+                        <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
+                            <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
     <!-- E: Testimonial -->

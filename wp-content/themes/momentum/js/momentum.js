@@ -2,6 +2,11 @@ const $ = jQuery
 
 $(document).ready(function () {
 
+    $('.testimonial-video-btn').click(function () {
+        $(this).parents('.testimonial-video').find('.testimonial-video-player').trigger('play')
+        $(this).remove()
+    })
+
     $('a').click(function (e) {
         const target = $(this).attr('href')
         if(target[0] === '#') {
@@ -29,9 +34,14 @@ $(document).ready(function () {
         }
     })
 
-    $('.counter').each(function() {
-        const end = parseInt($(this).text(), 10)
-        animateCounter($(this), 0, end, 2000);
+    $(window).on('scroll', function() {
+        document.querySelectorAll('.counter').forEach(counter => {
+            const end = $(counter).text()
+            const duration = $(counter).data('duration')
+            if($(window).scrollTop() + (500) > $(counter).offset().top) {
+                animateCounter($(counter), 0, end, duration ? parseInt(duration, 10) : 2000);
+            }
+        })
     })
 
     // Simple number counter function
@@ -59,16 +69,13 @@ $(document).ready(function () {
     $rollingTexts.eq(currentIndex).addClass('active');
 
     function rollText() {
-        // Remove active class and add fade-out to current text
         const activeText = $rollingTexts.eq(currentIndex)
         activeText.addClass('absolute top-0 translate-y-[100%] transition duration-500')
         setTimeout(() => {
             activeText.removeClass('translate-y-[100%] transition duration-500').addClass('translate-y-[-100%]')
         }, 300)
 
-        // Update index
         currentIndex = (currentIndex + 1) % $rollingTexts.length;
-
         $rollingTexts.eq(currentIndex).addClass('transition duration-500').removeClass('absolute top-0 translate-y-[-100%]');
 
         if(currentIndex >= 3) {

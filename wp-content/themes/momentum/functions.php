@@ -9,6 +9,11 @@ add_action('wp_enqueue_scripts', function () {
     // jquery
     wp_enqueue_script('jquery');
 
+    // video js
+    // wp_enqueue_script('videojs-js', 'https://vjs.zencdn.net/8.16.1/video.min.js');
+    // wp_enqueue_style('videojs-css', 'https://vjs.zencdn.net/8.16.1/video-js.css');
+    // wp_enqueue_style('videojs-city-css', 'https://unpkg.com/video.js@7/dist/video-js.min.css');
+
     // tailwind
     wp_enqueue_script('tailwindcss', 'https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries');
     wp_enqueue_script('tailwindcss-config', get_template_directory_uri() . '/js/tailwind.config.js', ['tailwindcss']);
@@ -35,6 +40,18 @@ add_action('init', function () {
     remove_post_type_support('page', 'editor');
     remove_post_type_support('page', 'revisions');
     remove_post_type_support('page', 'page-attributes');
+
+    register_post_type('partner', [
+       'label' => 'Partners',
+       'public' => true,
+       'supports' => ['title',],
+    ]);
+
+    register_post_type('portfolio', [
+        'label' => 'Portfolios',
+        'public' => true,
+        'supports' => ['title',],
+    ]);
 
 });
 
