@@ -34,15 +34,20 @@ $(document).ready(function () {
         }
     })
 
-    $(window).on('scroll', function() {
-        document.querySelectorAll('.counter').forEach(counter => {
+    $(window).on('scroll', () => {
+        checkCounter()
+    })
+    checkCounter()
+    function checkCounter() {
+        $('.counter:not(.is-animated)').each((index, counter) => {
             const end = $(counter).text()
             const duration = $(counter).data('duration')
-            if($(window).scrollTop() + (500) > $(counter).offset().top) {
+            if($(window).scrollTop() + $(window).height() > $(counter).offset().top) {
+                $(counter).addClass('is-animated')
                 animateCounter($(counter), 0, end, duration ? parseInt(duration, 10) : 2000);
             }
         })
-    })
+    }
 
     // Simple number counter function
     function animateCounter($element, start, end, duration) {
