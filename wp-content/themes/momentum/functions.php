@@ -41,16 +41,38 @@ add_action('init', function () {
     remove_post_type_support('page', 'revisions');
     remove_post_type_support('page', 'page-attributes');
 
-    register_post_type('partner', [
-       'label' => 'Partners',
-       'public' => true,
-       'supports' => ['title',],
-    ]);
-
     register_post_type('portfolio', [
-        'label' => 'Portfolios',
+        'labels' => [
+            'name' => 'Portfolio',
+            'singular_name' => 'Portfolio',
+            'add_new' => 'Add New Portfolio',
+            'add_new_item' => 'Add New Portfolio',
+            'new_item' => 'New Portfolio',
+            'view_item' => 'View Portfolio',
+            'view_items' => 'View Portfolio',
+            'all_items' => 'All Portfolio',
+        ],
         'public' => true,
         'supports' => ['title',],
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-feedback',
+    ]);
+
+    register_post_type('partner', [
+       'labels' => [
+           'name' => 'Partners',
+           'singular_name' => 'Partner',
+           'add_new' => 'Add New Partner',
+           'add_new_item' => 'Add New Partner',
+           'new_item' => 'New Partner',
+           'view_item' => 'View Partner',
+           'view_items' => 'View Partners',
+           'all_items' => 'All Partners',
+       ],
+       'public' => true,
+       'supports' => ['title',],
+        'menu_position' => 21,
+        'menu_icon' => 'dashicons-businessman',
     ]);
 
 });
