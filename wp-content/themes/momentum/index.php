@@ -69,11 +69,13 @@
                     <?php endforeach; ?>
                 </ul>
             </nav>
-            <a href="<?= $menu->url ?>" target="_blank" class="btn truncate navbar-link lg:hidden py-3 px-4 peer-checked:hidden font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
-                <span class="flex items-center justify-center gap-2 lg:gap-3">
-                    Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
-                </span>
-            </a>
+            <div class="lg:hidden peer-checked:hidden flex items-center justify-end flex-1 px-3">
+                <a href="<?= $menu->url ?>" target="_blank" class="btn truncate navbar-link py-3 px-4 font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
+                    <span class="flex items-center justify-center gap-2 lg:gap-3">
+                        Consult With Us <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
+                    </span>
+                </a>
+            </div>
             <label for="navbar-toggle" class="w-[36px] h-[36px] bg-[#F5DF4D] lg:hidden rounded-full relative">
                 <span class="bar-1 w-[18px] h-[2px] bg-[#3A3A3A] rounded-[20px] absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-4px] transition duration-200"></span>
                 <span class="bar-2 w-[18px] h-[2px] bg-[#3A3A3A] rounded-[20px] absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[4px] transition duration-200"></span>
