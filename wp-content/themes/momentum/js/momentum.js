@@ -96,6 +96,6 @@ window.onload = function() {
     // initialize AOS
     AOS.init({
         offset: 100,
-        duration: 700,
+        duration: 500,
     });
 }
