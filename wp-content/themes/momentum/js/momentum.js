@@ -83,7 +83,7 @@ $(document).ready(function () {
         currentIndex = (currentIndex + 1) % $rollingTexts.length;
         $rollingTexts.eq(currentIndex).addClass('transition duration-500').removeClass('absolute top-0 translate-y-[-100%]');
 
-        if(currentIndex >= 3) {
+        if(currentIndex >= $rollingTexts.length) {
             currentIndex = 0
         }
     }
