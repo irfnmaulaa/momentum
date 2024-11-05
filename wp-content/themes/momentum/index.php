@@ -19,14 +19,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:url" content="<?= site_url() ?>">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Branding Agency Jakarta - Build Momentum">
+    <meta property="og:title" content="<?= get_bloginfo('name') ?>">
     <meta property="og:description" content="Momentum adalah konsultan dan agensi Social Media Management yang membantu perusahaanmu membuat Profitable Brand & Digital Strategy yang kuat dan unik. Fokus kami adalah membuat perusahaanmu menjadi THE Top-of-Mind Brand, dan pastinya meningkatkan brand awareness, engagement serta mengembangkan komunitas Brand-mu.">
     <meta property="og:image" content="<?= get_template_directory_uri() . '/img/momentum.png' ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="<?= site_url() ?>">
-    <meta property="twitter:title" content="Branding Agency Jakarta - Build Momentum">
+    <meta property="twitter:title" content="<?= get_bloginfo('name') ?>">
     <meta property="twitter:description" content="Momentum adalah konsultan dan agensi Social Media Management yang membantu perusahaanmu membuat Profitable Brand & Digital Strategy yang kuat dan unik. Fokus kami adalah membuat perusahaanmu menjadi THE Top-of-Mind Brand, dan pastinya meningkatkan brand awareness, engagement serta mengembangkan komunitas Brand-mu.">
     <meta property="twitter:image" content="<?= get_template_directory_uri() . '/img/momentum.png' ?>">
 
