@@ -89,7 +89,7 @@ $(document).ready(function () {
     }
 
     // Start the rolling animation
-    setInterval(rollText, 3000);
+    setInterval(rollText, 1000);
 })
 
 window.onload = function() {
