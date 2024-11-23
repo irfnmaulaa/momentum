@@ -75,14 +75,27 @@ $(document).ready(function () {
 
     function rollText() {
         const activeText = $rollingTexts.eq(currentIndex)
-        activeText.addClass('absolute top-0 translate-y-[100%] transition duration-500')
+        activeText.css({
+            transition: '0.5s',
+            transform: 'translateY(100%)',
+            position: 'absolute',
+            top: '0',
+        })
         setTimeout(() => {
-            activeText.removeClass('translate-y-[100%] transition duration-500').addClass('translate-y-[-100%]')
+            activeText.css({
+                transform: 'translateY(-100%)',
+                transition: '0s',
+            })
         }, 300)
-
+        //
         currentIndex = (currentIndex + 1) % $rollingTexts.length;
-        $rollingTexts.eq(currentIndex).addClass('transition duration-500').removeClass('absolute top-0 translate-y-[-100%]');
-
+        $rollingTexts.eq(currentIndex).css({
+            transition: '0.5s',
+            position: 'static',
+            top: '0',
+            transform: 'translateY(0)'
+        })
+        //
         if(currentIndex >= $rollingTexts.length) {
             currentIndex = 0
         }

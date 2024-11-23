@@ -15,18 +15,17 @@ add_action('wp_enqueue_scripts', function () {
     // wp_enqueue_style('videojs-city-css', 'https://unpkg.com/video.js@7/dist/video-js.min.css');
 
     // tailwind
-    wp_enqueue_script('tailwindcss', 'https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries');
-    wp_enqueue_script('tailwindcss-config', get_template_directory_uri() . '/js/tailwind.config.js', ['tailwindcss']);
 
     // AOS
-    wp_enqueue_script('aos-js', 'https://unpkg.com/aos@next/dist/aos.js');
-    wp_enqueue_style('aos-css', 'https://unpkg.com/aos@next/dist/aos.css');
+    wp_enqueue_script('aos-js', get_template_directory_uri() . '/js/aos.js');
+    wp_enqueue_style('aos-css', get_template_directory_uri() . '/css/aos.css');
 
     // font awesome
     wp_enqueue_style('fontawesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
 
     // momentum
     wp_enqueue_script('momentum-js', get_template_directory_uri() . '/js/momentum.js', ['jquery']);
+    wp_enqueue_style('momentum-css2', get_template_directory_uri() . '/css/momentum.css');
     wp_enqueue_style('momentum', get_template_directory_uri() . '/style.css');
 });
 

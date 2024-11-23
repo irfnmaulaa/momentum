@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("../fonts/ProximaNova/ProximaNova-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("../fonts/ProximaNova/Proxima Nova Semibold.otf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("../fonts/ProximaNova/Proxima Nova Bold.otf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+.input-qa:checked ~ label img {
+    transform: rotate(180deg);
+}
+.accordion-content {
+    display: none;
+}
+.input-qa:checked ~ label .accordion-content {
+    display: block;
+}
+
+.peer:checked ~ label .bar-1 {
+    transform: translateX(-50%) translateY(0) rotate(45deg);
+}
+.peer:checked ~ label .bar-2 {
+    transform: translateX(-50%) translateY(0) rotate(-45deg);
+}
+
+.marquee {
+    animation: marqueAnim 5s linear infinite;
+}
+@media (min-width: 768px) {
+    .marquee {
+        animation: marqueAnim 10s linear infinite;
+    }
+}
+@media (min-width: 1080px) {
+    .marquee {
+        animation: marqueAnim 25s linear infinite;
+    }
+}
+@keyframes marqueAnim {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}

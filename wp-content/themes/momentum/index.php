@@ -188,7 +188,7 @@
         <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[45px]">
             <div class="grid lg:grid-cols-[1fr,640px] rounded-[16px] overflow-hidden bg-white" data-aos="fade-up">
                 <?php if($about_image = get_field('about_image', get_the_ID())): ?>
-                <div class="bg-[url(<?= $about_image ?>)] bg-cover bg-center aspect-[312/208] lg:aspect-[unset]"></div>
+                <div class="bg-cover bg-center aspect-[312/208] lg:aspect-[unset]" style="background-image: url(<?= $about_image ?>)"></div>
                 <?php endif; ?>
                 <div class="p-[24px] lg:p-[48px] flex flex-col gap-[20px] lg:gap-[36px] items-start">
 
@@ -263,7 +263,7 @@
                 <?php foreach(range(1, 4) as $i): ?>
                 <?php if($our_promise = get_field('our_promise_' . $i, get_the_ID())): ?>
                 <div data-aos="<?= $i % 2 === 0 ? 'fade-up-left' : 'fade-up-right' ?>" class="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
-                    <div class="bg-[url(<?= $our_promise['image'] ?>)] bg-cover bg-center"></div>
+                    <div style="background-image: url(<?= $our_promise['image'] ?>);" class="bg-cover bg-center"></div>
                     <div class="p-[24px] lg:p-[37px] flex flex-col gap-[16px] bg-white items-start">
                         <h3 class="text-[12px] lg:text-[20px] font-bold"><?= $our_promise['title'] ?></h3>
                         <p class="text-[12px] lg:text-[18px]"><?= $our_promise['description'] ?></p>
@@ -301,7 +301,7 @@
             <?php if($testimonial_video = get_field('testimonial_video_desktop', get_the_ID())): ?>
             <div data-aos="zoom-in-up" class="testimonial-video max-w-[800px] relative hidden lg:block">
                 <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
-                <div class="testimonial-video-btn absolute w-full h-full bg-black bg-[url(<?= $testimonial_video['poster'] ?>)] bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
+                <div style="background-image: url(<?= $testimonial_video['poster'] ?>);" class="testimonial-video-btn absolute w-full h-full bg-black bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
                     <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
                         <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
                     </div>
@@ -312,7 +312,7 @@
             <?php if($testimonial_video = get_field('testimonial_video_mobile', get_the_ID())): ?>
             <div data-aos="zoom-in-up" class="testimonial-video max-w-[600px] relative block lg:hidden">
                 <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
-                <div class="testimonial-video-btn absolute w-full h-full bg-black bg-[url(<?= $testimonial_video['poster'] ?>)] bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
+                <div style="background-image: url(<?= $testimonial_video['poster'] ?>);" class="testimonial-video-btn absolute w-full h-full bg-black bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
                     <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
                         <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
                     </div>
@@ -342,7 +342,7 @@
                     <?php endif; ?>
                 </div>
                 <?php if($image = get_field('cta_top_image', get_the_ID())): ?>
-                <div class="bg-[url(<?= $image ?>)] bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]"></div>
+                <div style="background-image: url(<?= $image ?>)" class="bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]"></div>
                 <?php endif; ?>
             </div>
         </div>
@@ -360,7 +360,7 @@
                 <?php foreach(range(1, 4) as $i): ?>
                     <?php if($digital_service = get_field('digital_service_' . $i, get_the_ID())): ?>
                         <div data-aos="fade-up" data-aos-delay="<?= $i * 100 ?>" class="bg-white rounded-[8px] flex flex-col overflow-hidden">
-                            <div class="bg-[url(<?= $digital_service['image'] ?>)] w-full bg-cover bg-center aspect-[324/220]"></div>
+                            <div style="background-image: url(<?= $digital_service['image'] ?>)" class="w-full bg-cover bg-center aspect-[324/220]"></div>
                             <div class="p-[20px] lg:p-[24px] text-center font-bold text-[16px] lg:text-[24px]">
                                 <?= $digital_service['caption'] ?>
                             </div>
@@ -388,7 +388,7 @@
                                 <img src="<?= get_field('brand', $porto->ID)['logo'] ?>" alt="logo" width="32" height="32 ">
                                 <span class="font-semibold text-[16px] lg:text-[18px]"><?= get_field('brand', $porto->ID)['name'] ?></span>
                             </div>
-                            <div class="bg-[url(<?= get_field('poster', $porto->ID) ?>)] w-full bg-cover bg-center aspect-[1/1]"></div>
+                            <div style="background-image: url(<?= get_field('poster', $porto->ID) ?>)" class="w-full bg-cover bg-center aspect-[1/1]"></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -450,7 +450,7 @@
                     <?php endif; ?>
                 </div>
                 <?php if($image = get_field('cta_bottom_image', get_the_ID())): ?>
-                    <div class="bg-[url(<?= $image ?>)] bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]"></div>
+                    <div style="background-image: url(<?= $image ?>)" class="bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]"></div>
                 <?php endif; ?>
             </div>
         </div>
