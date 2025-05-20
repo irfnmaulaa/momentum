@@ -207,3 +207,8 @@ function remove_comment_meta() {
     remove_action('wp_head', 'feed_links', 2);
 }
 add_action('init', 'remove_comment_meta');
+
+add_filter('wpcf7_form_action_url', function () {
+   return site_url('/form-actions');
+});
+add_filter( 'wpcf7_load_js', '__return_false' );

@@ -33,6 +33,38 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= site_url() ?>">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        .font-heading {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+        }
+        .contact-inputs .form-group {
+            margin-bottom: 16px;
+        }
+        .contact-inputs label {
+            margin-left: 16px;
+            font-weight: 700;
+            font-size: 18px;
+            padding-bottom: 0;
+        }
+        .contact-inputs .form-control {
+            width: 100%;
+            padding: 6px 16px;
+            border-radius: 16px;
+            margin-top: 0.2rem;
+        }
+        .contact-inputs input.form-control, .contact-inputs select.form-control {
+            height: 54px;
+        }
+        .contact-inputs textarea.form-control {
+            min-height: 250px;
+            padding: 12px 16px !important;
+        }
+    </style>
+
     <?php wp_head() ?>
 </head>
 <body class="font-body overflow-x-hidden text-[#3A3A3A] bg-[#F5F5F5]">
@@ -368,6 +400,37 @@
     <!-- E: Testimonial -->
 
     <!-- S: Contact Form -->
+    <section id="contact-form" class="contact-form py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto">
+            <div class="max-w-[720px] mx-auto bg-[#F5DF4D] rounded-[24px] py-8 px-6 text-[#3A3A3A] flex flex-col gap-[24px]">
+                <?php if($title = get_field('contact_form_title', get_the_ID())): ?>
+                    <h2 data-aos="fade-up" class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center"><?= $title ?></h2>
+                <?php endif; ?>
+
+                <div class="contact-inputs">
+                    <?php if($shortcode = get_field('contact_form_shortcode', get_the_ID())): ?>
+                        <?php echo do_shortcode($shortcode); ?>
+                    <?php endif; ?>
+                </div>
+
+                <?php if(!empty($_GET['form-submission'])): ?>
+                    <?php if($_GET['form-submission'] === 'success'): ?>
+                        <div class="p-3 px-4 font-semibold bg-green-100 text-green-600 rounded-lg mt-5">
+                            Form submitted successfully.
+                        </div>
+
+                        <div class="w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.7)] fixed top-0 left-0 z-[100]" id="modal-form-response">
+                            <div class="absolute top-[200px] left-[50%] translate-x-[-50%] mx-5 px-6 py-8 w-full max-w-[400px] bg-white rounded-lg font-light text-center">
+                                <div class="w-[25px] aspect-[1/1] flex items-center justify-center absolute right-3 top-2 text-3xl cursor-pointer select-none">×</div>
+                                <h3 class="text-xl font-semibold mb-3">Form Submitted Successful🚀</h3>
+                                <div class="text-gray-600">Thank you for sharing your project details. Our team will review your information and get in touch shortly to discuss how we can collaborate with the project.</div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
     <!-- E: Contact Form -->
 
 </main>

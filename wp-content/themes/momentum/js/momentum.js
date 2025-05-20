@@ -159,6 +159,29 @@ $(document).ready(function () {
 
     // Start the rolling animation
     setInterval(rollText, 1000);
+
+    $('form').removeAttr('novalidate')
+    $('form').submit(function() {
+        $(this).find('.form-control').attr('readonly', 'readonly')
+        $(this).find('button[type="submit"]').attr('disabled', 'disabled')
+        $(this).find('button[type="submit"]').css({
+            opacity: 0.7,
+        })
+        $(this).find('button[type="submit"] span').html('Sending your information...')
+    })
+
+    $('.form-control[aria-required="true"]').attr('required', 'required')
+
+    $('#modal-form-response').click(function (e) {
+        e.preventDefault()
+        $(this).css({
+            transition: '0.2s',
+            opacity: '0'
+        })
+        setTimeout(() => {
+            $(this).remove()
+        }, 300)
+    })
 })
 
 window.onload = function() {
