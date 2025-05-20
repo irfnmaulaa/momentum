@@ -20,6 +20,12 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('aos-js', get_template_directory_uri() . '/js/aos.js');
     wp_enqueue_style('aos-css', get_template_directory_uri() . '/css/aos.css');
 
+    wp_enqueue_script('siema-js', get_template_directory_uri() . '/js/siema.js');
+
+    // Swiper
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.js');
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.css');
+
     // font awesome
     wp_enqueue_style('fontawesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
 

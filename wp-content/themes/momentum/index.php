@@ -383,12 +383,32 @@
             <?php if($items = get_field('portfolio_items', get_the_ID())): ?>
                 <div class="grid lg:grid-cols-3 gap-[24px] w-full">
                     <?php foreach($items as $i => $porto): ?>
-                        <div data-aos="fade-up" data-aos-delay="<?= ($i % 3) * 100 ?>" class="bg-white rounded-[8px] flex flex-col overflow-hidden">
+                        <div data-aos="fade-up" data-aos-delay="<?= ($i % 3) * 100 ?>" class="group bg-white rounded-[8px] flex flex-col overflow-hidden">
                             <div class="py-3 px-4 flex items-center gap-3">
                                 <img src="<?= get_field('brand', $porto->ID)['logo'] ?>" alt="logo" width="32" height="32 ">
                                 <span class="font-semibold text-[16px] lg:text-[18px]"><?= get_field('brand', $porto->ID)['name'] ?></span>
                             </div>
-                            <div style="background-image: url(<?= get_field('poster', $porto->ID) ?>)" class="w-full bg-cover bg-center aspect-[1/1]"></div>
+                            <?php if($images = get_field('images', $porto->ID)): ?>
+                                <div class="relative slider-portfolio">
+                                    <div class="siema" id="slider-<?php echo $i; ?>">
+                                        <?php foreach(array_values($images) as $image): ?>
+                                            <div><img src="<?php echo wp_get_attachment_url($image->ID); ?>" alt="image" class="w-full"></div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <button class="absolute left-0 top-0 p-5 h-full btn-prev text-2xl opacity-70 group-hover:opacity-100 transition duration-200 z-10">
+                                        <img src="<?php echo get_stylesheet_directory_uri() . '/img/chevron-right.svg'; ?>" alt="chevron-right" class="select-none" style="transform: scaleX(-1)">
+                                    </button>
+                                    <button class="absolute right-0 top-0 p-5 h-full btn-next text-2xl opacity-70 group-hover:opacity-100 transition duration-200 z-10">
+                                        <img src="<?php echo get_stylesheet_directory_uri() . '/img/chevron-right.svg'; ?>" alt="chevron-right" class="select-none">
+                                    </button>
+
+                                    <div class="dots absolute bottom-0 p-5 left-[50%] translate-x-[-50%] flex items-center gap-2">
+                                        <?php foreach(array_values($images) as $i => $image): ?>
+                                            <button class="dot w-[10px] aspect-[1/1] rounded-full border border-[#333]" data-index="<?php echo $i; ?>"></button>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>

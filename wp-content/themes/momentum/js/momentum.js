@@ -2,6 +2,62 @@ const $ = jQuery
 
 $(document).ready(function () {
 
+    $('.slider-portfolio').each(function(index, el) {
+        const sliderEl = $(el)
+        const id = sliderEl.find('.siema').attr('id')
+
+        const slider = new Siema({
+            selector: `#${id}`,
+            duration: 200,
+            easing: 'ease-out',
+            perPage: 1,
+            startIndex: 0,
+            draggable: true,
+            multipleDrag: true,
+            threshold: 20,
+            loop: false,
+            rtl: false,
+            onInit: () => {},
+            onChange: () => {
+                $('.dot').css({
+                    background: 'transparent',
+                    opacity: 0.7
+                })
+                $(`.dot[data-index="${ slider.currentSlide }"]`).css({
+                    background: '#333',
+                    opacity: 1
+                })
+            },
+            loop: true,
+        });
+
+        sliderEl.find('.btn-next').click(function (e) {
+            e.preventDefault()
+            slider.next()
+        })
+
+        sliderEl.find('.btn-prev').click(function (e) {
+            e.preventDefault()
+            slider.prev()
+        })
+
+        sliderEl.find('.dot').click(function () {
+            const index = $(this).data('index')
+            slider.goTo(index)
+        })
+
+
+        $('.dot').css({
+            background: 'transparent',
+            opacity: 0.7
+        })
+        $(`.dot[data-index="${ slider.currentSlide }"]`).css({
+            background: '#333',
+            opacity: 1
+        })
+    })
+
+
     $('.testimonial-video-btn').click(function () {
         $(this).parents('.testimonial-video').find('.testimonial-video-player').trigger('play')
         $(this).remove()
