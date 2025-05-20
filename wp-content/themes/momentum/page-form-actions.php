@@ -80,7 +80,11 @@ if ($maxchat = get_field('maxchat')) {
 }
 
 if($email = get_field('email')) {
-    $sent = wp_mail(explode(",", $email['send_to']), 'Form Submission - ' . $_POST['full_name'] . ' - ' . $_POST['company'], "
+
+    $emails = explode(",", $email['send_to']);
+    
+    if (is_array($emails) && count($emails) > 0) {
+        $sent = wp_mail($emails, 'Form Submission - ' . $_POST['full_name'] . ' - ' . $_POST['company'], "
 <h2>Contact Form Submission:</h2>
 <table> 
 <tr>
@@ -115,8 +119,9 @@ if($email = get_field('email')) {
 </table>
 ", ['Content-type: text/html; charset=utf-8']);
 
-    if (!$sent) {
-        $is_error = true;
+        if (!$sent) {
+            $is_error = true;
+        }
     }
 }
 
