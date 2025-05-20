@@ -252,103 +252,6 @@
     </section>
     <!-- E: About -->
 
-    <!-- S: Service -->
-    <section id="service" class="service mt-[68px] py-[44px] lg:py-[80px]">
-        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
-            <?php if($title = get_field('our_promise_title', get_the_ID())): ?>
-            <h2 data-aos="fade-up" class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center"><?= $title ?></h2>
-            <?php endif; ?>
-
-            <div class="grid lg:grid-cols-2 gap-[22px] lg:gap-[37px] w-full">
-                <?php foreach(range(1, 4) as $i): ?>
-                <?php if($our_promise = get_field('our_promise_' . $i, get_the_ID())): ?>
-                <div data-aos="<?= $i % 2 === 0 ? 'fade-up-left' : 'fade-up-right' ?>" class="grid grid-cols-[1fr,1fr] lg:grid-cols-[1fr,290px] rounded-[16px] overflow-hidden">
-                    <div style="background-image: url(<?= $our_promise['image'] ?>);" class="bg-cover bg-center"></div>
-                    <div class="p-[24px] lg:p-[37px] flex flex-col gap-[16px] bg-white items-start">
-                        <h3 class="text-[12px] lg:text-[20px] font-bold"><?= $our_promise['title'] ?></h3>
-                        <p class="text-[12px] lg:text-[18px]"><?= $our_promise['description'] ?></p>
-                    </div>
-                </div>
-                <?php endif; ?>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-    <!-- E: Service -->
-
-    <!-- S: Testimonial -->
-    <section id="testimonial" class="testimonial py-[44px] lg:py-[80px]">
-        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
-            <?php if($title = get_field('testimonial_title', get_the_ID())): ?>
-            <h2 data-aos="fade-up" class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center"><?= $title ?></h2>
-            <?php endif; ?>
-
-            <div class="grid lg:grid-cols-4 gap-[22px] lg:gap-[24px] lg:max-w-[unset] max-w-[282px]">
-                <?php foreach(range(1, 4) as $i): ?>
-                    <?php if($testimonial = get_field('testimonial_' . $i, get_the_ID())): ?>
-                        <div data-aos="fade-up" data-aos-delay="<?= $i * 100 ?>" class="p-[24px] bg-white rounded-[16px] flex flex-col gap-[22px]">
-                            <div class="flex items-center gap-3">
-                                <img src="<?= $testimonial['profile']['photo'] ?>" width="40" height="40" alt="user">
-                                <span class="font-semibold text-[18px]"><?= $testimonial['profile']['name'] ?></span>
-                            </div>
-                            <p class="text-[12px] lg:text-[14px]"><?= $testimonial['description'] ?></p>
-                            <p class="text-[12px] lg:text-[14px]"><?= $testimonial['project'] ?></p>
-                        </div>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </div>
-
-            <?php if($testimonial_video = get_field('testimonial_video_desktop', get_the_ID())): ?>
-            <div data-aos="zoom-in-up" class="testimonial-video max-w-[800px] relative hidden lg:block">
-                <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
-                <div style="background-image: url(<?= $testimonial_video['poster'] ?>);" class="testimonial-video-btn absolute w-full h-full bg-black bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
-                    <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
-                        <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
-                    </div>
-                </div>
-            </div>
-            <?php endif; ?>
-
-            <?php if($testimonial_video = get_field('testimonial_video_mobile', get_the_ID())): ?>
-            <div data-aos="zoom-in-up" class="testimonial-video max-w-[600px] relative block lg:hidden">
-                <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
-                <div style="background-image: url(<?= $testimonial_video['poster'] ?>);" class="testimonial-video-btn absolute w-full h-full bg-black bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
-                    <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
-                        <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
-                    </div>
-                </div>
-            </div>
-            <?php endif; ?>
-        </div>
-    </section>
-    <!-- E: Testimonial -->
-
-    <!-- S: Call to Action -->
-    <section id="cta" class="cta py-[44px] lg:py-[80px]">
-        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
-            <div data-aos="fade-up" class="bg-[#F5DF4D] rounded-[24px] grid lg:grid-cols-[600px,1fr] gap-[32px] lg:gap-[37px] w-full p-[24px] lg:pt-0 pb-0 lg:px-[76px]">
-                <div class="flex flex-col items-start gap-[22px] lg:gap-[37px] lg:py-14">
-                    <?php if($title = get_field('cta_top_title', get_the_ID())): ?>
-                    <h2 class="text-[22px] lg:text-[40px] font-bold font-heading"><?= $title ?></h2>
-                    <?php endif; ?>
-
-                    <?php if($link = get_field('cta_top_link', get_the_ID())): ?>
-                    <a data-aos="zoom-in-right" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>" class="btn truncate select-none py-2 lg:py-3 px-3 lg:px-4 text-[12px] lg:text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
-                        <span class="flex items-center justify-center gap-2 lg:gap-3">
-                            <?= $link['title'] ?>
-                            <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
-                        </span>
-                    </a>
-                    <?php endif; ?>
-                </div>
-                <?php if($image = get_field('cta_top_image', get_the_ID())): ?>
-                <div style="background-image: url(<?= $image ?>)" class="bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]"></div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-    <!-- E: Call to Action -->
-
     <!-- S: Digital Service -->
     <section id="digital-service" class="digital-service py-[44px] lg:py-[80px]">
         <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
@@ -417,65 +320,55 @@
     </section>
     <!-- E: Portfolio -->
 
-    <!-- S: QA -->
-    <section id="qa" class="qa py-[44px] lg:py-[80px]">
-        <div class="container px-6 sm:px-8 lg:px-8 max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
-            <?php if($title = get_field('qa_title', get_the_ID())): ?>
-            <h2 data-aos="fade-up" class="text-center text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center"><?= $title ?></h2>
+    <!-- S: Testimonial -->
+    <section id="testimonial" class="testimonial py-[44px] lg:py-[80px]">
+        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center">
+            <?php if($title = get_field('testimonial_title', get_the_ID())): ?>
+                <h2 data-aos="fade-up" class="text-[22px] lg:text-[40px] font-bold font-heading whitespace-pre-line text-center"><?= $title ?></h2>
             <?php endif; ?>
-            <?php if($description = get_field('qa_subtitle', get_the_ID())): ?>
-            <p data-aos="fade-up" class="text-center text-[14px] lg:text-[22px]"><?= $description ?></p>
-            <?php endif; ?>
-            <?php if($questions = get_field('questions', get_the_ID())): ?>
-                <div class="flex flex-col gap-[21px] w-full">
 
-                    <?php foreach(explode("--", $questions) as $i => $question): ?>
-                    <?php $explode = explode("-", trim($question)); ?>
-                    <div data-aos="fade-up" class="accordion">
-                        <input id="qa-<?= $i ?>" type="radio" name="qa" class="peer absolute pointer-events-none opacity-0 input-qa">
-                        <label for="qa-<?= $i ?>" class="lg:py-3 lg:px-7 py-3 px-4 bg-white transition duration-200 peer-checked-lg:rounded-[24px] lg:rounded-[30px] rounded-[8px] border border-[#3A3A3A] flex flex-col w-full cursor-pointer select-none">
-                            <span class="flex items-center justify-between w-full">
-                                <p class="text-[12px] lg:text-[20px] font-bold"><?= $explode[0] ?></p>
-                                <img src="<?= get_stylesheet_directory_uri() . '/img/icon-chevron-down.png' ?>" alt="icon chevron down" width="32" height="32" class="transition duration-200 lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]">
-                            </span>
-                            <span class="accordion-content pt-2 lg:pt-4 text-[12px] lg:text-[16px]">
-                                <?= $explode[1] ?>
-                            </span>
-                        </label>
-                    </div>
-                    <?php endforeach; ?>
-
-                </div>
-            <?php endif; ?>
-        </div>
-    </section>
-    <!-- E: QA -->
-
-    <!-- S: Call to Action Bottom -->
-    <section id="cta-bottom" class="cta-bottom py-[44px] lg:py-[80px] relative">
-        <div class="absolute pointer-events-none bg-[#3A3A3A] h-[50%] w-full bottom-0 left-0 z-[0] translate-y-[2px]"></div>
-        <div class="container px-6 sm:px-8 lg:px-8 max-w-[420px] lg:max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[52px] items-center relative z-[1]">
-            <div data-aos="fade-up" class="bg-[#F5DF4D] rounded-[24px] grid lg:grid-cols-[600px,1fr] gap-[32px] lg:gap-[37px] w-full p-[24px] pb-0 lg:px-[76px]">
-                <div class="flex flex-col items-start gap-[22px] lg:gap-[37px] lg:py-14">
-                    <?php if($title = get_field('cta_bottom_title', get_the_ID())): ?>
-                    <h2 class="text-[22px] lg:text-[40px] font-bold font-heading"><?= $title ?></h2>
+            <div class="grid lg:grid-cols-4 gap-[22px] lg:gap-[24px] lg:max-w-[unset] max-w-[282px]">
+                <?php foreach(range(1, 4) as $i): ?>
+                    <?php if($testimonial = get_field('testimonial_' . $i, get_the_ID())): ?>
+                        <div data-aos="fade-up" data-aos-delay="<?= $i * 100 ?>" class="p-[24px] bg-white rounded-[16px] flex flex-col gap-[22px]">
+                            <div class="flex items-center gap-3">
+                                <img src="<?= $testimonial['profile']['photo'] ?>" width="40" height="40" alt="user">
+                                <span class="font-semibold text-[18px]"><?= $testimonial['profile']['name'] ?></span>
+                            </div>
+                            <p class="text-[12px] lg:text-[14px]"><?= $testimonial['description'] ?></p>
+                            <p class="text-[12px] lg:text-[14px]"><?= $testimonial['project'] ?></p>
+                        </div>
                     <?php endif; ?>
-                    <?php if($link = get_field('cta_bottom_link', get_the_ID())): ?>
-                    <a data-aos="zoom-in-right" href="<?= $link['url'] ?>" target="<?= $link['target'] ?>" class="btn truncate select-none py-2 lg:py-3 px-3 lg:px-4 text-[12px] lg:text-[18px] font-semibold rounded-[30px] bg-[#3A3A3A] text-white inline-block">
-                        <span class="flex items-center justify-center gap-2 lg:gap-3">
-                            <?= $link['title'] ?>
-                            <i class="fa fa-whatsapp text-[23px] lg:text-[26px]"></i>
-                        </span>
-                    </a>
-                    <?php endif; ?>
-                </div>
-                <?php if($image = get_field('cta_bottom_image', get_the_ID())): ?>
-                    <div style="background-image: url(<?= $image ?>)" class="bg-contain bg-bottom bg-no-repeat aspect-[264/165] lg:aspect-[unset]"></div>
-                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
+
+            <?php if($testimonial_video = get_field('testimonial_video_desktop', get_the_ID())): ?>
+                <div data-aos="zoom-in-up" class="testimonial-video max-w-[800px] relative hidden lg:block">
+                    <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
+                    <div style="background-image: url(<?= $testimonial_video['poster'] ?>);" class="testimonial-video-btn absolute w-full h-full bg-black bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
+                        <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
+                            <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if($testimonial_video = get_field('testimonial_video_mobile', get_the_ID())): ?>
+                <div data-aos="zoom-in-up" class="testimonial-video max-w-[600px] relative block lg:hidden">
+                    <video src="<?= $testimonial_video['video'] ?>" class="testimonial-video-player w-full" controls></video>
+                    <div style="background-image: url(<?= $testimonial_video['poster'] ?>);" class="testimonial-video-btn absolute w-full h-full bg-black bg-contain bg-no-repeat bg-center left-0 top-0 flex items-center justify-center group cursor-pointer">
+                        <div class="w-[50px] h-[50px] rounded-full border-2 border-white flex items-center justify-center group-hover:border-[#F5DF4D] transition duration-200 group-hover:scale-[1.2]">
+                            <div class="w-[20px] h-[25px] translate-x-[10%] border-2 bg-white group-hover:bg-[#F5DF4D] group-hover:border-[#F5DF4D] transition duration-200" style="clip-path: polygon(100% 50%, 0 0, 0 100%);"></div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
-    <!-- E: Call to Action Bottom -->
+    <!-- E: Testimonial -->
+
+    <!-- S: Contact Form -->
+    <!-- E: Contact Form -->
 
 </main>
 
