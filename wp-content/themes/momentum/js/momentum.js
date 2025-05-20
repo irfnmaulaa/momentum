@@ -19,11 +19,11 @@ $(document).ready(function () {
             rtl: false,
             onInit: () => {},
             onChange: () => {
-                $('.dot').css({
+                sliderEl.find('.dot').css({
                     background: 'transparent',
                     opacity: 0.7
                 })
-                $(`.dot[data-index="${ slider.currentSlide }"]`).css({
+                sliderEl.find(`.dot[data-index="${ slider.currentSlide }"]`).css({
                     background: '#333',
                     opacity: 1
                 })
@@ -47,11 +47,11 @@ $(document).ready(function () {
         })
 
 
-        $('.dot').css({
+        sliderEl.find('.dot').css({
             background: 'transparent',
             opacity: 0.7
         })
-        $(`.dot[data-index="${ slider.currentSlide }"]`).css({
+        sliderEl.find(`.dot[data-index="${ slider.currentSlide }"]`).css({
             background: '#333',
             opacity: 1
         })
